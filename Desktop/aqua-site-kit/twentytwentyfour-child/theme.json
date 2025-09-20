@@ -1,0 +1,322 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Twenty Twenty-Four Child",
+  "description": "Child theme de Twenty Twenty-Four para Aqua Site Kit con sistema de tokens personalizado",
+  "settings": {
+    "appearanceTools": true,
+    "useRootPaddingAwareAlignments": true,
+    "layout": {
+      "contentSize": "840px",
+      "wideSize": "1200px"
+    },
+    "color": {
+      "palette": [
+        {
+          "color": "#3b82f6",
+          "name": "Brand 500",
+          "slug": "brand-500"
+        },
+        {
+          "color": "#1d4ed8",
+          "name": "Brand 700",
+          "slug": "brand-700"
+        },
+        {
+          "color": "#f8fafc",
+          "name": "Neutral 100",
+          "slug": "neutral-100"
+        },
+        {
+          "color": "#0f172a",
+          "name": "Neutral 900",
+          "slug": "neutral-900"
+        },
+        {
+          "color": "#eff6ff",
+          "name": "Brand 50",
+          "slug": "brand-50"
+        },
+        {
+          "color": "#dbeafe",
+          "name": "Brand 100",
+          "slug": "brand-100"
+        },
+        {
+          "color": "#bfdbfe",
+          "name": "Brand 200",
+          "slug": "brand-200"
+        },
+        {
+          "color": "#93c5fd",
+          "name": "Brand 300",
+          "slug": "brand-300"
+        },
+        {
+          "color": "#60a5fa",
+          "name": "Brand 400",
+          "slug": "brand-400"
+        },
+        {
+          "color": "#2563eb",
+          "name": "Brand 600",
+          "slug": "brand-600"
+        },
+        {
+          "color": "#1e40af",
+          "name": "Brand 800",
+          "slug": "brand-800"
+        },
+        {
+          "color": "#1e3a8a",
+          "name": "Brand 900",
+          "slug": "brand-900"
+        },
+        {
+          "color": "#e2e8f0",
+          "name": "Neutral 200",
+          "slug": "neutral-200"
+        },
+        {
+          "color": "#cbd5e1",
+          "name": "Neutral 300",
+          "slug": "neutral-300"
+        },
+        {
+          "color": "#94a3b8",
+          "name": "Neutral 400",
+          "slug": "neutral-400"
+        },
+        {
+          "color": "#64748b",
+          "name": "Neutral 500",
+          "slug": "neutral-500"
+        },
+        {
+          "color": "#475569",
+          "name": "Neutral 600",
+          "slug": "neutral-600"
+        },
+        {
+          "color": "#334155",
+          "name": "Neutral 700",
+          "slug": "neutral-700"
+        },
+        {
+          "color": "#1e293b",
+          "name": "Neutral 800",
+          "slug": "neutral-800"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "name": "Inter",
+          "slug": "inter"
+        },
+        {
+          "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+          "name": "System UI",
+          "slug": "system-ui"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Extra Small",
+          "size": "0.75rem",
+          "slug": "xs"
+        },
+        {
+          "name": "Small",
+          "size": "0.875rem",
+          "slug": "sm"
+        },
+        {
+          "name": "Base",
+          "size": "1rem",
+          "slug": "base"
+        },
+        {
+          "name": "Large",
+          "size": "1.125rem",
+          "slug": "lg"
+        },
+        {
+          "name": "Extra Large",
+          "size": "1.25rem",
+          "slug": "xl"
+        },
+        {
+          "name": "2X Large",
+          "size": "1.5rem",
+          "slug": "2xl"
+        },
+        {
+          "name": "3X Large",
+          "size": "1.875rem",
+          "slug": "3xl"
+        },
+        {
+          "name": "4X Large",
+          "size": "2.25rem",
+          "slug": "4xl"
+        },
+        {
+          "name": "5X Large",
+          "size": "3rem",
+          "slug": "5xl"
+        },
+        {
+          "name": "6X Large",
+          "size": "3.75rem",
+          "slug": "6xl"
+        }
+      ]
+    },
+    "spacing": {
+      "spacingScale": {
+        "steps": 0
+      },
+      "spacingSizes": [
+        {
+          "name": "Extra Small",
+          "size": "0.5rem",
+          "slug": "xs"
+        },
+        {
+          "name": "Small",
+          "size": "1rem",
+          "slug": "sm"
+        },
+        {
+          "name": "Medium",
+          "size": "1.5rem",
+          "slug": "md"
+        },
+        {
+          "name": "Large",
+          "size": "2rem",
+          "slug": "lg"
+        },
+        {
+          "name": "Extra Large",
+          "size": "3rem",
+          "slug": "xl"
+        },
+        {
+          "name": "2X Large",
+          "size": "4rem",
+          "slug": "2xl"
+        },
+        {
+          "name": "3X Large",
+          "size": "6rem",
+          "slug": "3xl"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var(--wp--preset--color--neutral-100)",
+      "text": "var(--wp--preset--color--neutral-900)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--inter)",
+      "fontSize": "var(--wp--preset--font-size--base)",
+      "lineHeight": "1.6"
+    },
+    "spacing": {
+      "padding": {
+        "top": "var(--wp--preset--spacing--lg)",
+        "bottom": "var(--wp--preset--spacing--lg)"
+      }
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--brand-500)"
+        },
+        ":hover": {
+          "color": {
+            "text": "var(--wp--preset--color--brand-700)"
+          }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "var(--wp--preset--color--brand-500)",
+          "text": "#ffffff"
+        },
+        "typography": {
+          "fontWeight": "600"
+        },
+        "border": {
+          "radius": "4px"
+        },
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--sm)",
+            "right": "var(--wp--preset--spacing--md)",
+            "bottom": "var(--wp--preset--spacing--sm)",
+            "left": "var(--wp--preset--spacing--md)"
+          }
+        },
+        ":hover": {
+          "color": {
+            "background": "var(--wp--preset--color--brand-700)"
+          }
+        }
+      },
+      "heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontWeight": "700",
+          "lineHeight": "1.2"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        }
+      }
+    },
+    "blocks": {
+      "core/group": {
+        "spacing": {
+          "padding": {
+            "top": "var(--wp--preset--spacing--lg)",
+            "bottom": "var(--wp--preset--spacing--lg)"
+          }
+        }
+      },
+      "core/heading": {
+        "typography": {
+          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontWeight": "700",
+          "lineHeight": "1.2"
+        },
+        "color": {
+          "text": "var(--wp--preset--color--neutral-900)"
+        }
+      },
+      "core/paragraph": {
+        "typography": {
+          "lineHeight": "1.7"
+        }
+      }
+    }
+  },
+  "templateParts": [
+    {
+      "name": "header",
+      "title": "Header",
+      "area": "header"
+    },
+    {
+      "name": "footer",
+      "title": "Footer",
+      "area": "footer"
+    }
+  ]
+}

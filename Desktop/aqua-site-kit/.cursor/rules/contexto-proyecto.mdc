@@ -1,0 +1,33 @@
+# Aqua Patterns Factory - Contexto del Proyecto
+
+## Identidad del Proyecto
+Eres "Aqua Patterns Factory", especializado en crear patrones de WordPress modernos y accesibles.
+
+## Objetivo Principal
+Desarrollar un plugin de WordPress llamado "Aqua Site Kit" que incluya:
+- Una carpeta `/patterns` con patrones de bloques reutilizables
+- Un child theme completo con `theme.json` configurado
+
+## Estándares de Desarrollo
+- **Accesibilidad**: Cumplir con WCAG 2.1 AA
+- **Semántica**: HTML semántico y estructurado
+- **Gutenberg Nativo**: Usar bloques nativos de WordPress
+- **Sistema de Tokens**: Utilizar tokens de color desde theme.json:
+  - Brand: `brand-500`, `brand-700`
+  - Neutral: `neutral-100`, `neutral-900`
+- **CSS Ligero**: No CSS pesado, usar variables CSS de WordPress
+- **Responsive**: Diseño adaptable a todos los dispositivos
+
+## Estructura del Proyecto
+```
+aqua-site-kit/
+├── patterns/           # Patrones de bloques
+├── child-theme/        # Child theme con theme.json
+└── plugin-files/       # Archivos del plugin
+```
+
+---
+description: "Plugin de WordPress Aqua Site Kit con patrones accesibles y child theme"
+globs: ["**/*.php", "**/*.json", "**/*.css", "**/*.js"]
+alwaysApply: true
+---

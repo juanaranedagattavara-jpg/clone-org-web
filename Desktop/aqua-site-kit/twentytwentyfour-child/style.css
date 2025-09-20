@@ -1,0 +1,147 @@
+/*
+Theme Name: Twenty Twenty-Four Child
+Description: Child theme de Twenty Twenty-Four para Aqua Site Kit
+Author: Aqua Patterns Factory
+Author URI: https://aquapatterns.com
+Template: twentytwentyfour
+Version: 1.0.0
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentyfour-child
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+*/
+
+/* ==========================================================================
+   Importar estilos del tema padre
+   ========================================================================== */
+
+@import url("../twentytwentyfour/style.css");
+
+/* ==========================================================================
+   Variables CSS personalizadas
+   ========================================================================== */
+
+:root {
+  /* Colores del sistema de tokens Aqua */
+  --wp--preset--color--brand-500: #3b82f6;
+  --wp--preset--color--brand-700: #1d4ed8;
+  --wp--preset--color--neutral-100: #f8fafc;
+  --wp--preset--color--neutral-900: #0f172a;
+  
+  /* Colores adicionales */
+  --wp--preset--color--brand-50: #eff6ff;
+  --wp--preset--color--brand-100: #dbeafe;
+  --wp--preset--color--brand-200: #bfdbfe;
+  --wp--preset--color--brand-300: #93c5fd;
+  --wp--preset--color--brand-400: #60a5fa;
+  --wp--preset--color--brand-600: #2563eb;
+  --wp--preset--color--brand-800: #1e40af;
+  --wp--preset--color--brand-900: #1e3a8a;
+  
+  --wp--preset--color--neutral-50: #f8fafc;
+  --wp--preset--color--neutral-200: #e2e8f0;
+  --wp--preset--color--neutral-300: #cbd5e1;
+  --wp--preset--color--neutral-400: #94a3b8;
+  --wp--preset--color--neutral-500: #64748b;
+  --wp--preset--color--neutral-600: #475569;
+  --wp--preset--color--neutral-700: #334155;
+  --wp--preset--color--neutral-800: #1e293b;
+  
+  /* Espaciado personalizado */
+  --wp--preset--spacing--xs: 0.5rem;
+  --wp--preset--spacing--sm: 1rem;
+  --wp--preset--spacing--md: 1.5rem;
+  --wp--preset--spacing--lg: 2rem;
+  --wp--preset--spacing--xl: 3rem;
+  --wp--preset--spacing--2xl: 4rem;
+  --wp--preset--spacing--3xl: 6rem;
+  
+  /* Tipografía personalizada */
+  --wp--preset--font-family--heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --wp--preset--font-family--body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Tamaños de fuente personalizados */
+  --wp--preset--font-size--xs: 0.75rem;
+  --wp--preset--font-size--sm: 0.875rem;
+  --wp--preset--font-size--base: 1rem;
+  --wp--preset--font-size--lg: 1.125rem;
+  --wp--preset--font-size--xl: 1.25rem;
+  --wp--preset--font-size--2xl: 1.5rem;
+  --wp--preset--font-size--3xl: 1.875rem;
+  --wp--preset--font-size--4xl: 2.25rem;
+  --wp--preset--font-size--5xl: 3rem;
+  --wp--preset--font-size--6xl: 3.75rem;
+}
+
+/* ==========================================================================
+   Estilos base del child theme
+   ========================================================================== */
+
+body {
+  font-family: var(--wp--preset--font-family--body);
+  line-height: 1.6;
+  color: var(--wp--preset--color--neutral-900);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--wp--preset--font-family--heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--wp--preset--color--neutral-900);
+}
+
+/* ==========================================================================
+   Mejoras de accesibilidad
+   ========================================================================== */
+
+/* Focus visible mejorado */
+*:focus-visible {
+  outline: 2px solid var(--wp--preset--color--brand-500);
+  outline-offset: 2px;
+}
+
+/* Reducir movimiento para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================================
+   Estilos para patrones Aqua
+   ========================================================================== */
+
+/* Asegurar que los patrones tengan el espaciado correcto */
+.wp-block-group.aqua-pattern {
+  margin: 0;
+}
+
+/* Mejorar la legibilidad del texto */
+.wp-block-paragraph {
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --wp--preset--spacing--xl: 2rem;
+    --wp--preset--spacing--2xl: 3rem;
+    --wp--preset--spacing--3xl: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --wp--preset--font-size--5xl: 2.5rem;
+    --wp--preset--font-size--6xl: 3rem;
+  }
+}
