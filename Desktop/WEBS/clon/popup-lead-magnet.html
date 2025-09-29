@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Lead Magnet - Sueño Andino</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 50px;
+        }
+
+        .trigger-button {
+            background: #0e5e6f;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .trigger-button:hover {
+            background: #0a4a5a;
+            transform: translateY(-2px);
+        }
+
+        /* ===== POPUP LEAD MAGNET ===== */
+        .guide-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            display: none;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            padding: 2.5rem 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0e5e6f 0%, #0a4a5a 100%);
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .modal-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .modal-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .guide-benefits {
+            margin-bottom: 2rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: #f5f6f7;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .benefit-item:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-item:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .benefit-item:hover {
+            background: #e8f4f8;
+            transform: translateX(5px);
+        }
+
+        .benefit-icon {
+            font-size: 1.2rem;
+            color: #7fb069;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .guide-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .guide-form input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            color: #1c1c1e;
+        }
+
+        .guide-form input:focus {
+            outline: none;
+            border-color: #0e5e6f;
+            box-shadow: 0 0 0 3px rgba(14, 94, 111, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-large {
+            width: 100%;
+            padding: 18px 24px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            background: #0e5e6f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-large:hover {
+            background: #0a4a5a;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(14, 94, 111, 0.3);
+        }
+
+        .btn-large:active {
+            transform: translateY(-1px);
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-large:hover .btn-icon {
+            transform: scale(1.2);
+        }
+
+        .form-disclaimer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #7fb069;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 10px;
+                max-width: calc(100% - 20px);
+            }
+
+            .modal-header {
+                padding: 2rem 1.5rem 1rem;
+            }
+
+            .modal-header h3 {
+                font-size: 1.5rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+
+            .benefit-item {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Test del Popup Lead Magnet</h1>
+    <p>Haz clic en el botón para probar el popup del lead magnet:</p>
+    
+    <button class="trigger-button" onclick="showGuideModal()">📚 Descarga Guía Gratuita</button>
+    
+    <!-- POPUP LEAD MAGNET -->
+    <div id="guideModal" class="guide-modal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-icon">📚</div>
+                    <h3>¡Descarga tu Guía Gratuita!</h3>
+                    <p class="modal-subtitle">"Desarrollo Territorial Regenerativo: Metodologías Probadas para Comunidades Andinas"</p>
+                    <button class="modal-close" onclick="closeGuideModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="guide-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Metodologías regenerativas paso a paso</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Casos de éxito reales de comunidades</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Herramientas prácticas de implementación</span>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">✅</span>
+                            <span>Plantillas descargables</span>
+                        </div>
+                    </div>
+                    
+                    <form class="guide-form">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Tu nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="organization" placeholder="Tu organización (opcional)">
+                        </div>
+                        <button type="submit" class="btn-large">
+                            <span class="btn-text">Descargar Guía Gratuita</span>
+                            <span class="btn-icon">📥</span>
+                        </button>
+                        <p class="form-disclaimer">
+                            🔒 Respetamos tu privacidad. No compartimos tu información.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showGuideModal() {
+            document.getElementById('guideModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuideModal();
+            }
+        });
+
+        // Form handling
+        document.querySelector('.guide-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('¡Guía descargada exitosamente! Revisa tu email.');
+                closeGuideModal();
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGuideModal();
+            }
+        });
+    </script>
+</body>
+</html>
