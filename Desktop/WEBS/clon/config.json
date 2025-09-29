@@ -1,0 +1,52 @@
+{
+  "project": {
+    "name": "Sueño Andino",
+    "version": "1.0.0",
+    "description": "Desarrollo Territorial Regenerativo",
+    "author": "Sueño Andino Team",
+    "url": "https://sueñoandino.com",
+    "email": "hola@sueñoandino.com",
+    "phone": "+51-999-888-777",
+    "location": "Lima, Perú"
+  },
+  "colors": {
+    "primary": "#0e5e6f",
+    "accent": "#7fb069",
+    "sand": "#d9c8b4",
+    "ink": "#1c1c1e",
+    "cloud": "#f5f6f7",
+    "white": "#ffffff"
+  },
+  "statistics": {
+    "beneficiaries": "1,200+",
+    "communities": "25+",
+    "projects": "15+",
+    "satisfaction": "98%"
+  },
+  "social": {
+    "facebook": "https://facebook.com/sueñoandino",
+    "twitter": "https://twitter.com/sueñoandino",
+    "instagram": "https://instagram.com/sueñoandino",
+    "linkedin": "https://linkedin.com/company/sueñoandino"
+  },
+  "development": {
+    "port": 8000,
+    "host": "localhost",
+    "mainFile": "sueño-andino-clone.html",
+    "buildDir": "dist",
+    "cacheDir": ".cache"
+  },
+  "seo": {
+    "title": "Sueño Andino - Desarrollo Territorial Regenerativo",
+    "description": "Impulsamos proyectos de desarrollo territorial que devuelven vitalidad a los ecosistemas, fortalecen comunidades y generan prosperidad consciente y regenerativa.",
+    "keywords": [
+      "desarrollo territorial",
+      "regenerativo",
+      "comunidades andinas",
+      "sostenibilidad",
+      "Perú",
+      "Bolivia",
+      "Ecuador"
+    ]
+  }
+}

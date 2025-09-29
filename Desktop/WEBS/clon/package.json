@@ -1,0 +1,35 @@
+{
+  "name": "sueño-andino-website",
+  "version": "1.0.0",
+  "description": "Sitio web para Sueño Andino - Desarrollo Territorial Regenerativo",
+  "main": "sueño-andino-clone.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'No build process needed for static HTML'",
+    "lint": "echo 'Linting HTML files...'",
+    "optimize": "echo 'Optimizing project...'"
+  },
+  "keywords": [
+    "desarrollo-territorial",
+    "regenerativo",
+    "comunidades-andinas",
+    "sostenibilidad",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Sueño Andino",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "homepage": ".",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

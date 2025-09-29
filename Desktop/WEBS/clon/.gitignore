@@ -1,0 +1,60 @@
+# Archivos de caché y temporales
+*.cache
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de IDEs
+.vscode/
+.idea/
+*.sublime-*
+
+# Archivos de Node.js (si se usa)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de Next.js
+.next/
+out/
+
+# Archivos de build
+dist/
+build/
+
+# Archivos de WordPress
+wp-config.php
+wp-content/uploads/
+wp-content/cache/
+wp-content/backup-db/
+wp-content/advanced-cache.php
+wp-content/wp-cache-config.php
+
+# Archivos de PHP
+*.php~
+*.php.bak
+
+# Archivos de compresión
+*.zip
+*.tar.gz
+*.rar
+
+# Archivos de backup
+*.backup
+*.old
+
+# Archivos de caché específicos
+.cache/
+cache/
+temp/
+tmp/
