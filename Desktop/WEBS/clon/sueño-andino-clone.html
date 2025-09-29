@@ -395,78 +395,134 @@
             grid-row: 3;
         }
 
-        /* ===== TIMELINE SECTION ===== */
+        /* ===== TIMELINE SECTION (Anne Frank Style) ===== */
         .timeline-section {
-            background: var(--sa-cloud);
+            background: #f8f6f3;
             padding: 80px 0;
         }
 
-        .timeline {
-            max-width: 800px;
+        .anne-timeline {
+            max-width: 1000px;
             margin: 0 auto;
             position: relative;
+            padding: 0 2rem;
         }
 
-        .timeline::before {
+        .anne-timeline::before {
             content: '';
             position: absolute;
             left: 50%;
             top: 0;
             bottom: 0;
             width: 2px;
-            background: linear-gradient(to bottom, var(--sa-primary), var(--sa-accent));
+            background: #d4d4d4;
             transform: translateX(-50%);
         }
 
-        .timeline-item {
+        .anne-timeline-item {
             display: flex;
             align-items: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
             position: relative;
+            min-height: 200px;
         }
 
-        .timeline-item:nth-child(odd) {
+        .anne-timeline-item:nth-child(odd) {
             flex-direction: row;
         }
 
-        .timeline-item:nth-child(even) {
+        .anne-timeline-item:nth-child(even) {
             flex-direction: row-reverse;
         }
 
-        .timeline-year {
-            background: var(--sa-primary);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            position: relative;
-            z-index: 2;
-            min-width: 80px;
-            text-align: center;
-        }
-
-        .timeline-content {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .anne-timeline-image {
+            flex: 0 0 300px;
+            height: 200px;
             margin: 0 2rem;
-            flex: 1;
-            max-width: 300px;
+            position: relative;
         }
 
-        .timeline-content h3 {
-            font-size: 1.25rem;
+        .anne-timeline-image .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 100%);
+            border-radius: 8px;
+            border: 3px solid var(--sa-primary);
+            border-right: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .anne-timeline-item:nth-child(even) .anne-timeline-image .image-placeholder {
+            border-left: none;
+            border-right: 3px solid var(--sa-accent);
+        }
+
+        .anne-timeline-image .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(14, 94, 111, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        .anne-timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            background: var(--sa-primary);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px #f8f6f3;
+        }
+
+        .anne-timeline-item:nth-child(even) .anne-timeline-dot {
+            background: var(--sa-accent);
+        }
+
+        .anne-year {
+            color: white;
+            font-size: 0.7rem;
             font-weight: 600;
-            color: var(--sa-ink);
-            margin-bottom: 0.5rem;
+            position: absolute;
+            right: 30px;
+            white-space: nowrap;
         }
 
-        .timeline-content p {
+        .anne-timeline-content {
+            flex: 1;
+            max-width: 400px;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .anne-timeline-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .anne-timeline-content p {
             color: var(--sa-ink);
             opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* ===== SERVICES SECTION ===== */
@@ -1088,35 +1144,52 @@
                 font-size: 1rem;
             }
 
-            .timeline::before {
+            /* Anne Timeline responsive */
+            .anne-timeline::before {
                 left: 40px;
             }
 
-            .timeline-item {
+            .anne-timeline-item {
                 flex-direction: row !important;
                 padding-left: 60px;
-                margin-bottom: 2rem;
+                margin-bottom: 3rem;
                 position: relative;
+                min-height: auto;
             }
 
-            .timeline-year {
+            .anne-timeline-image {
+                flex: 0 0 200px;
+                height: 150px;
+                margin: 0 1rem 0 0;
+            }
+
+            .anne-timeline-dot {
                 position: absolute;
                 left: 0;
                 top: 0;
                 transform: translateX(-50%);
-                min-width: 90px;
-                font-size: 0.9rem;
-                padding: 0.5rem 1rem;
-                white-space: nowrap;
-                z-index: 2;
+                z-index: 3;
             }
 
-            .timeline-content {
+            .anne-year {
+                position: absolute;
+                right: 25px;
+                font-size: 0.6rem;
+            }
+
+            .anne-timeline-content {
                 margin: 0;
                 max-width: none;
                 width: 100%;
                 padding: 1.5rem;
-                margin-left: 10px;
+            }
+
+            .anne-timeline-content h3 {
+                font-size: 1.25rem;
+            }
+
+            .anne-timeline-content p {
+                font-size: 0.9rem;
             }
 
             /* Why We Exist responsive */
@@ -1272,9 +1345,22 @@
                 margin-bottom: 0.5rem;
             }
 
-            .timeline-content p {
+            .anne-timeline-content p {
                 font-size: 0.85rem;
                 line-height: 1.4;
+            }
+
+            .anne-timeline-image {
+                flex: 0 0 150px;
+                height: 120px;
+            }
+
+            .anne-timeline-content {
+                padding: 1.25rem;
+            }
+
+            .anne-timeline-content h3 {
+                font-size: 1.1rem;
             }
 
             /* Why We Exist responsive small screens */
@@ -1414,47 +1500,106 @@
         </div>
     </section>
 
-    <!-- TIMELINE SECTION -->
+    <!-- TIMELINE SECTION (Anne Frank Style) -->
     <section id="timeline" class="timeline-section">
         <div class="container">
             <div class="section-header">
                 <h2>Nuestra Historia</h2>
-                <p>Un viaje de transformación que impacta miles de vidas</p>
+                <p>Descubre a través de estos momentos importantes los eventos que han marcado nuestro camino de transformación territorial regenerativa</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
-                    <div class="timeline-content">
-                        <h3>Fundación</h3>
-                        <p>Nacimiento con visión de transformar territorios.</p>
+            <div class="anne-timeline">
+                <!-- 2020 - Fundación -->
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🌱</div>
+                                <p>Fundación de Sueño Andino</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot">
+                        <span class="anne-year">2020</span>
+                    </div>
+                    <div class="anne-timeline-content">
+                        <h3>Fundación de Sueño Andino</h3>
+                        <p>Nacimiento de nuestra organización con la visión clara de transformar territorios a través de metodologías regenerativas y participación comunitaria activa.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2021</div>
-                    <div class="timeline-content">
-                        <h3>Primeros Proyectos</h3>
-                        <p>Programas de educación regenerativa.</p>
+
+                <!-- 2021 - Primeros Proyectos -->
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🎓</div>
+                                <p>Primeros programas educativos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot">
+                        <span class="anne-year">2021</span>
+                    </div>
+                    <div class="anne-timeline-content">
+                        <h3>Primeros Proyectos de Educación Regenerativa</h3>
+                        <p>Implementamos nuestros primeros programas de educación regenerativa en comunidades andinas, estableciendo las bases metodológicas que nos caracterizan.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2022</div>
-                    <div class="timeline-content">
-                        <h3>Expansión</h3>
-                        <p>15+ comunidades atendidas.</p>
+
+                <!-- 2022 - Expansión -->
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🗺️</div>
+                                <p>Expansión territorial</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot">
+                        <span class="anne-year">2022</span>
+                    </div>
+                    <div class="anne-timeline-content">
+                        <h3>Expansión a 15+ Comunidades</h3>
+                        <p>Ampliamos nuestro alcance a más de 15 comunidades andinas en Perú, Bolivia y Ecuador, consolidando nuestra presencia regional.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2023</div>
-                    <div class="timeline-content">
-                        <h3>Impacto</h3>
-                        <p>1,200+ personas beneficiadas.</p>
+
+                <!-- 2023 - Impacto -->
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">📊</div>
+                                <p>Impacto medible</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot">
+                        <span class="anne-year">2023</span>
+                    </div>
+                    <div class="anne-timeline-content">
+                        <h3>1,200+ Personas Beneficiadas</h3>
+                        <p>Alcanzamos un hito importante: más de 1,200 personas han sido beneficiadas directamente por nuestros programas de desarrollo territorial regenerativo.</p>
                     </div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">2024</div>
-                    <div class="timeline-content">
-                        <h3>Futuro</h3>
-                        <p>Continuamos expandiendo nuestro impacto.</p>
+
+                <!-- 2024 - Futuro -->
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">🚀</div>
+                                <p>Visión de futuro</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot">
+                        <span class="anne-year">2024</span>
+                    </div>
+                    <div class="anne-timeline-content">
+                        <h3>Consolidación y Futuro</h3>
+                        <p>Continuamos expandiendo nuestro impacto con nuevos proyectos innovadores y alianzas estratégicas que fortalecen el desarrollo territorial regenerativo en Latinoamérica.</p>
                     </div>
                 </div>
             </div>
