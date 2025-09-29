@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Sueño Andino</title>
+    <style>
+        /* ===== RESET Y BASE ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1c1c1e;
+            background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        /* ===== VARIABLES CSS ===== */
+        :root {
+            --sa-primary: #0e5e6f;
+            --sa-accent: #7fb069;
+            --sa-sand: #d9c8b4;
+            --sa-ink: #1c1c1e;
+            --sa-cloud: #f5f6f7;
+            --sa-white: #ffffff;
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .site-header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .site-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--sa-ink);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--sa-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+        }
+
+        .main-navigation {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--sa-ink);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--sa-primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--sa-primary);
+            border: 2px solid var(--sa-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sa-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ===== BLOG PAGE ===== */
+        .blog-page {
+            background: white;
+            min-height: 100vh;
+            padding-top: 0;
+        }
+
+        .blog-header {
+            background: var(--sa-cloud);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .blog-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+        }
+
+        .blog-header p {
+            font-size: 1.25rem;
+            color: var(--sa-ink);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-posts {
+            padding: 4rem 0;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .blog-card {
+            background: var(--sa-cloud);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: var(--sa-ink);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: var(--sa-ink);
+            opacity: 0.6;
+            margin-bottom: 1rem;
+        }
+
+        .btn-small {
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .btn-primary {
+            background: var(--sa-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #0a4a5a;
+            transform: translateY(-2px);
+        }
+
+        .newsletter-section {
+            background: var(--sa-primary);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-content p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form .form-group {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 0;
+        }
+
+        .newsletter-form input {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: var(--sa-ink);
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+        }
+
+        .newsletter-form .btn {
+            padding: 1rem 2rem;
+            white-space: nowrap;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: var(--sa-ink);
+            color: white;
+            padding: 3rem 0 1rem;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--sa-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .footer-description {
+            opacity: 0.8;
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-menu li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-menu a {
+            color: white;
+            opacity: 0.8;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-menu a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 1rem;
+            text-align: center;
+            opacity: 0.6;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .main-navigation {
+                display: none;
+            }
+
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+
+            .blog-header p {
+                font-size: 1rem;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .newsletter-form .form-group {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .newsletter-form .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-brand {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="sueño-andino-clone.html" class="site-logo">
+                    <div class="logo-icon">SA</div>
+                    <span class="site-title">Sueño Andino</span>
+                </a>
+
+                <nav class="main-navigation">
+                    <ul class="nav-menu">
+                        <li><a href="sueño-andino-clone.html#servicios">Servicios</a></li>
+                        <li><a href="sueño-andino-clone.html#equipo">Nosotros</a></li>
+                        <li><a href="sueño-andino-clone.html#contacto">Contacto</a></li>
+                        <li><a href="blog-sueño-andino.html" class="active">Blog</a></li>
+                    </ul>
+                    <a href="sueño-andino-clone.html#guia" class="btn btn-secondary">Descarga Guía Gratuita</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- BLOG PAGE -->
+    <main class="blog-page">
+        <div class="blog-header">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>
+                    Descubre las últimas noticias y artículos sobre desarrollo
+                    territorial regenerativo
+                </p>
+            </div>
+        </div>
+
+        <div class="blog-posts">
+            <div class="container">
+                <div class="blog-grid">
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <h3>Metodologías Regenerativas en Comunidades Andinas</h3>
+                            <p>
+                                Exploramos cómo las metodologías regenerativas están
+                                transformando las comunidades andinas, generando impacto real
+                                y sostenible.
+                            </p>
+                            <div class="blog-meta">Publicado el 15 de septiembre, 2024</div>
+                            <a href="articulo-metodologias-regenerativas.html" class="btn btn-primary btn-small">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <h3>El Futuro del Desarrollo Territorial</h3>
+                            <p>
+                                Análisis de las tendencias y oportunidades en el desarrollo
+                                territorial regenerativo para los próximos años.
+                            </p>
+                            <div class="blog-meta">Publicado el 10 de septiembre, 2024</div>
+                            <a href="articulo-futuro-desarrollo-territorial.html" class="btn btn-primary btn-small">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <h3>Casos de Éxito: Comunidad de Huancavelica</h3>
+                            <p>
+                                Conoce el proceso completo de transformación de la comunidad
+                                de Huancavelica a través de nuestros programas.
+                            </p>
+                            <div class="blog-meta">Publicado el 5 de septiembre, 2024</div>
+                            <a href="#" class="btn btn-primary btn-small">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <h3>Educación Regenerativa: Una Nueva Perspectiva</h3>
+                            <p>
+                                Descubre cómo la educación regenerativa está cambiando la
+                                forma en que las comunidades aprenden y crecen.
+                            </p>
+                            <div class="blog-meta">Publicado el 1 de septiembre, 2024</div>
+                            <a href="#" class="btn btn-primary btn-small">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <h3>Participación Comunitaria: Clave del Éxito</h3>
+                            <p>
+                                La importancia de involucrar activamente a las comunidades en
+                                cada etapa del desarrollo territorial.
+                            </p>
+                            <div class="blog-meta">Publicado el 28 de agosto, 2024</div>
+                            <a href="#" class="btn btn-primary btn-small">Leer más</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-card">
+                        <div class="blog-card-content">
+                            <h3>Sostenibilidad y Prosperidad Consciente</h3>
+                            <p>
+                                Cómo generar prosperidad que respete el medio ambiente y
+                                beneficie a las comunidades a largo plazo.
+                            </p>
+                            <div class="blog-meta">Publicado el 25 de agosto, 2024</div>
+                            <a href="#" class="btn btn-primary btn-small">Leer más</a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="newsletter-section">
+                    <div class="newsletter-content">
+                        <h3>Mantente Actualizado</h3>
+                        <p>
+                            Recibe las últimas noticias y artículos directamente en tu
+                            correo
+                        </p>
+                        <form class="newsletter-form">
+                            <div class="form-group">
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Tu nombre"
+                                    required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    placeholder="tu@email.com"
+                                    required
+                                />
+                            </div>
+                            <button type="submit" class="btn btn-secondary">
+                                Suscribirse
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="sueño-andino-clone.html" class="site-logo">
+                        <div class="footer-logo">SA</div>
+                        <span class="footer-title">Sueño Andino</span>
+                    </a>
+                    <p class="footer-description">
+                        Organización para el desarrollo territorial regenerativo
+                    </p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul class="footer-menu">
+                        <li><a href="sueño-andino-clone.html#servicios">Servicios</a></li>
+                        <li><a href="sueño-andino-clone.html#equipo">Nosotros</a></li>
+                        <li><a href="sueño-andino-clone.html#contacto">Contacto</a></li>
+                        <li><a href="blog-sueño-andino.html">Blog</a></li>
+                        <li><a href="sueño-andino-clone.html#guia">Guía Gratuita</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul class="footer-menu">
+                        <li>Lima, Perú</li>
+                        <li>+51-999-888-777</li>
+                        <li>hola@sueñoandino.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sueño Andino. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                    });
+                }
+            });
+        });
+
+        // Form handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.textContent = 'Enviando...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    alert('¡Suscripción exitosa!');
+                    form.reset();
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
