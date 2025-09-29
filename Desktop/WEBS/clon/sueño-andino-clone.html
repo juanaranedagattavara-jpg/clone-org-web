@@ -256,49 +256,143 @@
             font-weight: 500;
         }
 
-        /* ===== ABOUT SECTION ===== */
-        .about-section {
+        /* ===== WHY WE EXIST SECTION (Golden Circle Design) ===== */
+        .why-we-exist-section {
             background: white;
-            padding: 80px 0;
+            padding: 0;
+            margin: 0;
         }
 
-        .about-grid {
+        .why-we-exist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 0;
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .why-item {
+            min-height: 400px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            align-items: stretch;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            flex-wrap: wrap;
         }
 
-        .about-card {
-            flex: 1;
-            min-width: 250px;
-            max-width: 300px;
+        .why-image {
             background: var(--sa-cloud);
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .about-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        .why-text {
+            background: white;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .about-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
+        .why-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--sa-ink);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
 
-        .about-card p {
+        .why-text p {
+            font-size: 1.125rem;
             color: var(--sa-ink);
             opacity: 0.8;
-            line-height: 1.6;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .text-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--sa-primary);
+            margin-top: 1rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--sa-cloud) 0%, #e8f0f2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(14, 94, 111, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .placeholder-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        .placeholder-content p {
+            color: var(--sa-ink);
+            opacity: 0.6;
+            font-size: 0.9rem;
+            font-weight: 500;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        /* Grid layout específico para el patrón 2x3 */
+        .why-item:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+        .why-item:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+
+        .why-item:nth-child(3) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+
+        .why-item:nth-child(4) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .why-item:nth-child(5) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+
+        .why-item:nth-child(6) {
+            grid-column: 2;
+            grid-row: 3;
         }
 
         /* ===== TIMELINE SECTION ===== */
@@ -1025,13 +1119,36 @@
                 margin-left: 10px;
             }
 
-            .about-grid {
-                flex-direction: column;
-                align-items: center;
+            /* Why We Exist responsive */
+            .why-we-exist-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
 
-            .about-card {
-                max-width: 400px;
+            .why-item:nth-child(1),
+            .why-item:nth-child(2),
+            .why-item:nth-child(3),
+            .why-item:nth-child(4),
+            .why-item:nth-child(5),
+            .why-item:nth-child(6) {
+                grid-column: 1;
+                grid-row: auto;
+            }
+
+            .why-text {
+                padding: 3rem 2rem;
+            }
+
+            .why-text h2 {
+                font-size: 2rem;
+            }
+
+            .why-text p {
+                font-size: 1rem;
+            }
+
+            .why-item {
+                min-height: 300px;
             }
 
             .services-grid {
@@ -1082,6 +1199,7 @@
             .footer-brand {
                 justify-content: center;
             }
+
         }
 
         @media (max-width: 480px) {
@@ -1158,6 +1276,23 @@
                 font-size: 0.85rem;
                 line-height: 1.4;
             }
+
+            /* Why We Exist responsive small screens */
+            .why-text {
+                padding: 2rem 1.5rem;
+            }
+
+            .why-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .why-text p {
+                font-size: 0.95rem;
+            }
+
+            .why-item {
+                min-height: 250px;
+            }
         }
     </style>
 </head>
@@ -1174,7 +1309,8 @@
                 <nav class="main-navigation">
                     <ul class="nav-menu">
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#equipo">Nosotros</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                         <li><a href="blog-sueño-andino.html">Blog</a></li>
                     </ul>
@@ -1222,45 +1358,58 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="nosotros" class="about-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>¿Por qué Sueño Andino?</h2>
-                <p>
-                    Transformamos territorios a través de metodologías regenerativas y
-                    participación comunitaria
-                </p>
+    <!-- WHY WE EXIST SECTION (Golden Circle Design) -->
+    <section id="nosotros" class="why-we-exist-section">
+        <div class="why-we-exist-grid">
+            <!-- Imagen 1: Mentora y estudiante -->
+            <div class="why-item why-image">
+                <div class="image-placeholder">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">👩‍🏫</div>
+                        <p>Mentora y estudiante en comunidad andina</p>
+                    </div>
+                </div>
             </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3>Metodología Regenerativa</h3>
-                    <p>
-                        Desarrollamos capacidades locales y fortalecemos el tejido
-                        social a través de metodologías participativas y regenerativas.
-                    </p>
+            
+            <!-- Texto 1: Por qué existimos -->
+            <div class="why-item why-text">
+                <h2>Por qué Existimos</h2>
+                <p>En Sueño Andino creemos que cada comunidad, sin importar su ubicación geográfica, recursos económicos o contexto social, merece la oportunidad de escribir su propia historia de prosperidad regenerativa.</p>
+                <div class="text-divider"></div>
+            </div>
+            
+            <!-- Texto 2: Qué hacemos -->
+            <div class="why-item why-text">
+                <h2>Qué Hacemos</h2>
+                <p>Trabajamos directamente en <strong>25+</strong> comunidades andinas a lo largo de Perú, Bolivia y Ecuador; conocemos de primera mano los desafíos personales y las barreras estructurales que se interponen entre nuestros territorios y sus objetivos de desarrollo.</p>
+                <div class="text-divider"></div>
+            </div>
+            
+            <!-- Imagen 2: Colaboración en equipo -->
+            <div class="why-item why-image">
+                <div class="image-placeholder">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">🤝</div>
+                        <p>Equipo colaborando en proyectos regenerativos</p>
+                    </div>
                 </div>
-                <div class="about-card">
-                    <h3>Impacto Medible</h3>
-                    <p>
-                        Nuestros proyectos generan resultados tangibles y sostenibles
-                        que benefician a las comunidades a largo plazo.
-                    </p>
+            </div>
+            
+            <!-- Imagen 3: Comunidad unida -->
+            <div class="why-item why-image">
+                <div class="image-placeholder">
+                    <div class="placeholder-content">
+                        <div class="placeholder-icon">🌄</div>
+                        <p>Comunidad andina trabajando en conjunto</p>
+                    </div>
                 </div>
-                <div class="about-card">
-                    <h3>Participación Comunitaria</h3>
-                    <p>
-                        Involucramos activamente a las comunidades en cada etapa del
-                        proceso de desarrollo territorial.
-                    </p>
-                </div>
-                <div class="about-card">
-                    <h3>Sostenibilidad</h3>
-                    <p>
-                        Promovemos prácticas que respetan el medio ambiente y generan
-                        prosperidad consciente.
-                    </p>
-                </div>
+            </div>
+            
+            <!-- Texto 3: Cómo lo hacemos -->
+            <div class="why-item why-text">
+                <h2>Cómo lo Hacemos</h2>
+                <p>Nuestro equipo trabaja DENTRO de las comunidades todos los días para asegurar que tengan acceso a necesidades básicas como alimentación, vivienda estable y tecnología; mientras facilitamos el aprendizaje socio-emocional, aumentamos el acceso a servicios de salud mental y física, y apoyamos la preparación para el emprendimiento y el desarrollo profesional. Al traer comunidades de apoyo a nuestros territorios, estamos fomentando condiciones de aprendizaje equitativas para todos.</p>
+                <div class="text-divider"></div>
             </div>
         </div>
     </section>
@@ -1545,7 +1694,8 @@
                     <h3>Navegación</h3>
                     <ul class="footer-menu">
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#equipo">Nosotros</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                         <li><a href="blog-sueño-andino.html">Blog</a></li>
                         <li><a href="#guia">Guía Gratuita</a></li>
