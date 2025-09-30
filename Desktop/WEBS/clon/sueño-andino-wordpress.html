@@ -921,70 +921,152 @@
             opacity: 0.3;
         }
 
-        /* ===== TEAM SECTION ===== */
+        /* ===== TEAM SECTION (Modern Design) ===== */
         .team-section {
             background: white;
-            padding: 80px 0;
+            padding: 100px 0;
         }
 
-        .team-directorio,
-        .team-equipo {
-            margin-bottom: 4rem;
-        }
-
-        .team-directorio h3,
-        .team-equipo h3 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--sa-ink);
+        .team-header {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--sa-primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .team-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .team-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1000px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1200px;
             margin: 0 auto;
-        }
-
-        .team-grid-small {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
         }
 
         .team-member {
             text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
         }
 
-        .member-avatar {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--sa-primary), var(--sa-accent));
+        .team-member:hover {
+            transform: translateY(-5px);
+        }
+
+        .member-image {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #fff;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .image-placeholder {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .placeholder-content {
+            z-index: 2;
+            position: relative;
+        }
+
+        .placeholder-icon {
+            font-size: 3rem;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .team-member:hover .placeholder-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .decorative-dots {
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            width: 40px;
+            height: 40px;
+            background: radial-gradient(circle, var(--sa-primary) 2px, transparent 2px);
+            background-size: 8px 8px;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .decorative-shape {
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #7fb069, #a8d8a8);
+            border-radius: 8px;
+            opacity: 0.8;
+            z-index: 1;
+            transform: rotate(15deg);
         }
 
         .team-member h4 {
-            font-size: 1.125rem;
-            font-weight: 600;
+            font-size: 1.25rem;
+            font-weight: 700;
             color: var(--sa-ink);
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .team-member:hover h4 {
+            color: var(--sa-primary);
         }
 
         .team-member p {
-            font-size: 0.9rem;
-            color: var(--sa-ink);
-            opacity: 0.7;
+            font-size: 1rem;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .team-member:hover p {
+            color: #555;
         }
 
         /* ===== CONTACT SECTION ===== */
@@ -1495,12 +1577,17 @@
             }
 
             .team-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2.5rem;
             }
 
-            .team-grid-small {
-                flex-direction: column;
-                align-items: center;
+            .team-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .member-image {
+                width: 180px;
+                height: 180px;
             }
 
             .contact-content {
@@ -1554,21 +1641,47 @@
             }
 
             .team-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
             }
 
-            .member-avatar {
-                width: 60px;
-                height: 60px;
-                font-size: 1.2rem;
+            .team-header h2 {
+                font-size: 2rem;
             }
 
-            .team-member h4 {
+            .team-description {
                 font-size: 1rem;
             }
 
+            .member-image {
+                width: 160px;
+                height: 160px;
+            }
+
+            .placeholder-icon {
+                font-size: 2.5rem;
+            }
+
+            .decorative-dots {
+                width: 30px;
+                height: 30px;
+                top: -8px;
+                left: -15px;
+            }
+
+            .decorative-shape {
+                width: 45px;
+                height: 45px;
+                bottom: -10px;
+                right: -10px;
+            }
+
+            .team-member h4 {
+                font-size: 1.1rem;
+            }
+
             .team-member p {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
 
             .timeline::before {
@@ -1882,6 +1995,50 @@
         }
 
         @media (max-width: 360px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .team-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .team-description {
+                font-size: 0.95rem;
+            }
+
+            .member-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .placeholder-icon {
+                font-size: 2rem;
+            }
+
+            .decorative-dots {
+                width: 25px;
+                height: 25px;
+                top: -6px;
+                left: -12px;
+            }
+
+            .decorative-shape {
+                width: 35px;
+                height: 35px;
+                bottom: -8px;
+                right: -8px;
+            }
+
+            .team-member h4 {
+                font-size: 1rem;
+            }
+
+            .team-member p {
+                font-size: 0.85rem;
+            }
+
             .anne-timeline::before {
                 left: 20px;
                 z-index: 0;
@@ -2268,63 +2425,137 @@
     <!-- TEAM SECTION -->
     <section id="equipo" class="team-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Nuestro Equipo</h2>
-                <p>Conoce a las personas que hacen posible nuestro impacto</p>
+            <div class="team-header">
+                <p class="team-subtitle">Nuestro Equipo</p>
+                <h2>Conoce Nuestro Equipo</h2>
+                <p class="team-description">Un equipo comprometido con el desarrollo territorial y la transformación de comunidades en los Andes peruanos.</p>
             </div>
-            <div class="team-directorio">
-                <h3>Directorio</h3>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-avatar">MQ</div>
-                        <h4>María Elena Quispe</h4>
-                        <p>Directora Ejecutiva</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👩‍💼</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-avatar">CM</div>
-                        <h4>Carlos Mamani</h4>
-                        <p>Director de Programas</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-avatar">AC</div>
-                        <h4>Ana Condori</h4>
-                        <p>Coordinadora de Educación</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-avatar">RH</div>
-                        <h4>Roberto Huamán</h4>
-                        <p>Especialista en Desarrollo Territorial</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-avatar">LV</div>
-                        <h4>Lucía Vargas</h4>
-                        <p>Coordinadora de Comunidades</p>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-avatar">DP</div>
-                        <h4>Diego Paredes</h4>
-                        <p>Director de Finanzas</p>
-                    </div>
+                    <h4>María Elena Quispe</h4>
+                    <p>Directora Ejecutiva</p>
                 </div>
-            </div>
-            <div class="team-equipo">
-                <h3>Equipo</h3>
-                <div class="team-grid-small">
-                    <div class="team-member">
-                        <div class="member-avatar">SM</div>
-                        <h4>Sofia Mendoza</h4>
-                        <p>Coordinadora de Proyectos</p>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👨‍💼</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-avatar">MT</div>
-                        <h4>Miguel Torres</h4>
-                        <p>Facilitador Comunitario</p>
+                    <h4>Carlos Mamani</h4>
+                    <p>Director de Programas</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👩‍🏫</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
                     </div>
-                    <div class="team-member">
-                        <div class="member-avatar">ER</div>
-                        <h4>Elena Rojas</h4>
-                        <p>Especialista en Sostenibilidad</p>
+                    <h4>Ana Condori</h4>
+                    <p>Coordinadora de Educación</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👨‍🔬</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
                     </div>
+                    <h4>Roberto Huamán</h4>
+                    <p>Especialista en Desarrollo Territorial</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👩‍🤝‍👩</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Lucía Vargas</h4>
+                    <p>Coordinadora de Comunidades</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👨‍💻</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Diego Paredes</h4>
+                    <p>Director de Finanzas</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👩‍💼</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Sofia Mendoza</h4>
+                    <p>Coordinadora de Proyectos</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👨‍🤝‍👨</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Miguel Torres</h4>
+                    <p>Facilitador Comunitario</p>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <div class="placeholder-icon">👩‍🌾</div>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Elena Rojas</h4>
+                    <p>Especialista en Sostenibilidad</p>
                 </div>
             </div>
         </div>
