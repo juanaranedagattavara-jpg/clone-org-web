@@ -395,21 +395,17 @@
             grid-row: 3;
         }
 
-        /* ===== TIMELINE SECTION (ELITE Anne Frank Style - 99% Fidelity) ===== */
+        /* ===== TIMELINE SECTION (Anne Frank Style) ===== */
         .timeline-section {
             background: #f8f6f3;
-            padding: 0;
-            margin: 0;
-            position: relative;
-            overflow: hidden;
+            padding: 80px 0;
         }
 
         .anne-timeline {
-            max-width: 100%;
-            margin: 0;
+            max-width: 1000px;
+            margin: 0 auto;
             position: relative;
-            padding: 0;
-            background: #f8f6f3;
+            padding: 0 2rem;
         }
 
         .anne-timeline::before {
@@ -418,27 +414,17 @@
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 1px;
+            width: 2px;
             background: #d4d4d4;
             transform: translateX(-50%);
-            z-index: 1;
         }
 
         .anne-timeline-item {
             display: flex;
             align-items: center;
-            margin-bottom: 0;
+            margin-bottom: 4rem;
             position: relative;
-            min-height: 500px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .anne-timeline-item.animate {
-            opacity: 1;
-            transform: translateY(0);
+            min-height: 200px;
         }
 
         .anne-timeline-item:nth-child(odd) {
@@ -450,41 +436,29 @@
         }
 
         .anne-timeline-image {
-            flex: 0 0 50%;
-            height: 500px;
+            flex: 0 0 300px;
+            height: 200px;
+            margin: 0 2rem;
             position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .anne-timeline-image:hover {
-            transform: scale(1.02);
         }
 
         .anne-timeline-image .image-placeholder {
             width: 100%;
             height: 100%;
             background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 100%);
+            border-radius: 8px;
+            border: 3px solid var(--sa-primary);
+            border-right: none;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
-            border: none;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-image:hover .image-placeholder {
-            background: linear-gradient(135deg, #d9e8eb 0%, #c4b5a0 100%);
-        }
-
-        .anne-timeline-item:nth-child(odd) .anne-timeline-image .image-placeholder {
-            border-right: 3px solid #0e5e6f;
         }
 
         .anne-timeline-item:nth-child(even) .anne-timeline-image .image-placeholder {
-            border-left: 3px solid #7fb069;
+            border-left: none;
+            border-right: 3px solid var(--sa-accent);
         }
 
         .anne-timeline-image .image-placeholder::before {
@@ -496,12 +470,6 @@
             bottom: 0;
             background: linear-gradient(45deg, transparent 30%, rgba(14, 94, 111, 0.1) 50%, transparent 70%);
             animation: shimmer 3s infinite;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .anne-timeline-image:hover .image-placeholder::before {
-            opacity: 1;
         }
 
         .anne-timeline-dot {
@@ -510,166 +478,51 @@
             top: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
-            background: #0e5e6f;
-            width: 18px;
-            height: 18px;
+            background: var(--sa-primary);
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 0 4px #f8f6f3;
-            border: 2px solid #f8f6f3;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-item:hover .anne-timeline-dot {
-            transform: translate(-50%, -50%) scale(1.2);
-            box-shadow: 0 0 0 6px #f8f6f3, 0 0 20px rgba(14, 94, 111, 0.3);
         }
 
         .anne-timeline-item:nth-child(even) .anne-timeline-dot {
-            background: #7fb069;
-        }
-
-        .anne-timeline-item:nth-child(even):hover .anne-timeline-dot {
-            box-shadow: 0 0 0 6px #f8f6f3, 0 0 20px rgba(127, 176, 105, 0.3);
+            background: var(--sa-accent);
         }
 
         .anne-year {
-            color: #666;
-            font-size: 0.8rem;
+            color: white;
+            font-size: 0.7rem;
             font-weight: 600;
             position: absolute;
             right: 30px;
             white-space: nowrap;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-item:hover .anne-year {
-            color: #0e5e6f;
-            font-size: 0.85rem;
-        }
-
-        .anne-timeline-item:nth-child(even):hover .anne-year {
-            color: #7fb069;
         }
 
         .anne-timeline-content {
-            flex: 0 0 50%;
-            padding: 5rem 4rem;
+            flex: 1;
+            max-width: 400px;
+            padding: 2rem;
             background: white;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-item:hover .anne-timeline-content {
-            background: #fafafa;
-            padding-left: 4.5rem;
-            padding-right: 4.5rem;
-        }
-
-        .anne-timeline-item:nth-child(even):hover .anne-timeline-content {
-            padding-left: 4.5rem;
-            padding-right: 4.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
         .anne-timeline-content h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: #1c1c1e;
-            margin-bottom: 1.2rem;
-            line-height: 1.2;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: -0.02em;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-item:hover .anne-timeline-content h3 {
-            color: #0e5e6f;
-            transform: translateX(5px);
-        }
-
-        .anne-timeline-item:nth-child(even):hover .anne-timeline-content h3 {
-            color: #7fb069;
-            transform: translateX(-5px);
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
         .anne-timeline-content p {
-            color: #1c1c1e;
-            opacity: 0.7;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-item:hover .anne-timeline-content p {
-            opacity: 0.9;
-            transform: translateX(5px);
-        }
-
-        .anne-timeline-item:nth-child(even):hover .anne-timeline-content p {
-            transform: translateX(-5px);
-        }
-
-        .placeholder-content {
-            text-align: center;
-            z-index: 2;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-image:hover .placeholder-content {
-            transform: scale(1.05);
-        }
-
-        .placeholder-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.2rem;
-            opacity: 0.6;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-image:hover .placeholder-icon {
+            color: var(--sa-ink);
             opacity: 0.8;
-            transform: scale(1.1);
-        }
-
-        .placeholder-content p {
-            color: #1c1c1e;
-            opacity: 0.5;
-            font-size: 0.95rem;
-            font-weight: 500;
-            max-width: 200px;
-            margin: 0 auto;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        .anne-timeline-image:hover .placeholder-content p {
-            opacity: 0.7;
-        }
-
-        /* Scroll reveal animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .anne-timeline-item.animate {
-            animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* ===== SERVICES SECTION ===== */
@@ -1291,7 +1144,7 @@
                 font-size: 1rem;
             }
 
-            /* Anne Timeline responsive - Elite */
+            /* Anne Timeline responsive */
             .anne-timeline::before {
                 left: 40px;
             }
@@ -1299,59 +1152,44 @@
             .anne-timeline-item {
                 flex-direction: row !important;
                 padding-left: 60px;
-                margin-bottom: 0;
+                margin-bottom: 3rem;
                 position: relative;
-                min-height: 400px;
-                opacity: 1;
-                transform: none;
+                min-height: auto;
             }
 
             .anne-timeline-image {
-                flex: 0 0 50%;
-                height: 400px;
-                margin: 0;
+                flex: 0 0 200px;
+                height: 150px;
+                margin: 0 1rem 0 0;
             }
 
             .anne-timeline-dot {
                 position: absolute;
                 left: 0;
-                top: 50%;
-                transform: translateX(-50%) translateY(-50%);
+                top: 0;
+                transform: translateX(-50%);
                 z-index: 3;
-                width: 16px;
-                height: 16px;
             }
 
             .anne-year {
                 position: absolute;
-                right: 20px;
-                font-size: 0.7rem;
+                right: 25px;
+                font-size: 0.6rem;
             }
 
             .anne-timeline-content {
-                flex: 0 0 50%;
-                padding: 3rem 2rem;
                 margin: 0;
                 max-width: none;
                 width: 100%;
+                padding: 1.5rem;
             }
 
             .anne-timeline-content h3 {
-                font-size: 1.4rem;
-                margin-bottom: 1rem;
+                font-size: 1.25rem;
             }
 
             .anne-timeline-content p {
-                font-size: 0.95rem;
-            }
-
-            .placeholder-icon {
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-            }
-
-            .placeholder-content p {
-                font-size: 0.85rem;
+                font-size: 0.9rem;
             }
 
             /* Why We Exist responsive */
@@ -1507,52 +1345,22 @@
                 margin-bottom: 0.5rem;
             }
 
-            .anne-timeline::before {
-                left: 35px;
-            }
-
-            .anne-timeline-item {
-                padding-left: 50px;
-                margin-bottom: 0;
-                min-height: 350px;
+            .anne-timeline-content p {
+                font-size: 0.85rem;
+                line-height: 1.4;
             }
 
             .anne-timeline-image {
-                flex: 0 0 50%;
-                height: 350px;
-            }
-
-            .anne-timeline-dot {
-                width: 14px;
-                height: 14px;
-            }
-
-            .anne-year {
-                right: 15px;
-                font-size: 0.65rem;
+                flex: 0 0 150px;
+                height: 120px;
             }
 
             .anne-timeline-content {
-                padding: 2rem 1.5rem;
+                padding: 1.25rem;
             }
 
             .anne-timeline-content h3 {
-                font-size: 1.2rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .anne-timeline-content p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-            }
-
-            .placeholder-icon {
-                font-size: 2rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .placeholder-content p {
-                font-size: 0.8rem;
+                font-size: 1.1rem;
             }
 
             /* Why We Exist responsive small screens */
@@ -2091,62 +1899,6 @@
                         behavior: 'smooth',
                         block: 'start',
                     });
-                }
-            });
-        });
-
-        // Timeline scroll animations - Elite
-        const timelineItems = document.querySelectorAll('.anne-timeline-item');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animate');
-                    }, index * 200); // Staggered animation
-                }
-            });
-        }, observerOptions);
-
-        timelineItems.forEach(item => {
-            timelineObserver.observe(item);
-        });
-
-        // Enhanced hover effects for timeline
-        timelineItems.forEach(item => {
-            const image = item.querySelector('.anne-timeline-image');
-            const content = item.querySelector('.anne-timeline-content');
-            const dot = item.querySelector('.anne-timeline-dot');
-            const year = item.querySelector('.anne-year');
-
-            item.addEventListener('mouseenter', () => {
-                // Add subtle parallax effect
-                if (image) {
-                    image.style.transform = 'scale(1.02) translateY(-2px)';
-                }
-                if (content) {
-                    content.style.transform = 'translateY(-2px)';
-                }
-                if (dot) {
-                    dot.style.transform = 'translate(-50%, -50%) scale(1.2)';
-                }
-            });
-
-            item.addEventListener('mouseleave', () => {
-                // Reset transforms
-                if (image) {
-                    image.style.transform = 'scale(1) translateY(0)';
-                }
-                if (content) {
-                    content.style.transform = 'translateY(0)';
-                }
-                if (dot) {
-                    dot.style.transform = 'translate(-50%, -50%) scale(1)';
                 }
             });
         });
