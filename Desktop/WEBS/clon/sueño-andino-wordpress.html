@@ -395,17 +395,21 @@
             grid-row: 3;
         }
 
-        /* ===== TIMELINE SECTION (Anne Frank Style) ===== */
+        /* ===== TIMELINE SECTION (ELITE Anne Frank Style - 99% Fidelity) ===== */
         .timeline-section {
             background: #f8f6f3;
-            padding: 80px 0;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
         }
 
         .anne-timeline {
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 100%;
+            margin: 0;
             position: relative;
-            padding: 0 2rem;
+            padding: 0;
+            background: #f8f6f3;
         }
 
         .anne-timeline::before {
@@ -414,17 +418,27 @@
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 2px;
+            width: 1px;
             background: #d4d4d4;
             transform: translateX(-50%);
+            z-index: 1;
         }
 
         .anne-timeline-item {
             display: flex;
             align-items: center;
-            margin-bottom: 4rem;
+            margin-bottom: 0;
             position: relative;
-            min-height: 200px;
+            min-height: 500px;
+            padding: 4rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .anne-timeline-item.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .anne-timeline-item:nth-child(odd) {
@@ -436,10 +450,21 @@
         }
 
         .anne-timeline-image {
-            flex: 0 0 300px;
-            height: 200px;
-            margin: 0 2rem;
+            flex: 0 0 50%;
+            height: 500px;
+            margin: 0;
             position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .anne-timeline-image:hover {
+            transform: scale(1.02);
         }
 
         .anne-timeline-image .image-placeholder {
@@ -447,18 +472,24 @@
             height: 100%;
             background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 100%);
             border-radius: 8px;
-            border: 3px solid var(--sa-primary);
-            border-right: none;
+            border: 3px solid #0e5e6f;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .anne-timeline-item:nth-child(odd) .anne-timeline-image .image-placeholder {
+            border-right: none;
+            border-left: 3px solid #0e5e6f;
         }
 
         .anne-timeline-item:nth-child(even) .anne-timeline-image .image-placeholder {
             border-left: none;
-            border-right: 3px solid var(--sa-accent);
+            border-right: 3px solid #7fb069;
         }
 
         .anne-timeline-image .image-placeholder::before {
@@ -470,6 +501,16 @@
             bottom: 0;
             background: linear-gradient(45deg, transparent 30%, rgba(14, 94, 111, 0.1) 50%, transparent 70%);
             animation: shimmer 3s infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .anne-timeline-image:hover .image-placeholder::before {
+            opacity: 1;
+        }
+
+        .anne-timeline-image:hover .image-placeholder {
+            background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 50%, #e8f0f2 100%);
         }
 
         .anne-timeline-dot {
@@ -478,51 +519,188 @@
             top: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
-            background: var(--sa-primary);
-            width: 20px;
-            height: 20px;
+            background: #0e5e6f;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 0 0 4px #f8f6f3;
+            border: 2px solid #f8f6f3;
+            transition: all 0.3s ease;
         }
 
         .anne-timeline-item:nth-child(even) .anne-timeline-dot {
-            background: var(--sa-accent);
+            background: #7fb069;
+        }
+
+        .anne-timeline-item:hover .anne-timeline-dot {
+            transform: translate(-50%, -50%) scale(1.2);
+            box-shadow: 0 0 0 6px #f8f6f3, 0 0 20px rgba(14, 94, 111, 0.3);
+        }
+
+        .anne-timeline-item:nth-child(even):hover .anne-timeline-dot {
+            box-shadow: 0 0 0 6px #f8f6f3, 0 0 20px rgba(127, 176, 105, 0.3);
         }
 
         .anne-year {
-            color: white;
-            font-size: 0.7rem;
+            color: #666;
+            font-size: 0.8rem;
             font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.5px;
             position: absolute;
             right: 30px;
             white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+        }
+
+        .anne-timeline-item:nth-child(even) .anne-year {
+            left: 30px;
+            right: auto;
+            transform: translateX(-10px);
+        }
+
+        .anne-timeline-item:hover .anne-year {
+            opacity: 1;
+            transform: translateX(0);
+            color: #0e5e6f;
+            font-size: 0.85rem;
+        }
+
+        .anne-timeline-item:nth-child(even):hover .anne-year {
+            transform: translateX(0);
+            color: #7fb069;
         }
 
         .anne-timeline-content {
-            flex: 1;
-            max-width: 400px;
-            padding: 2rem;
+            flex: 0 0 50%;
+            max-width: 500px;
+            padding: 5rem 4rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            margin: 0 2rem;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .anne-timeline-item:nth-child(odd) .anne-timeline-content {
+            transform: translateX(-20px);
+        }
+
+        .anne-timeline-item:nth-child(even) .anne-timeline-content {
+            transform: translateX(20px);
+        }
+
+        .anne-timeline-item:hover .anne-timeline-content {
+            transform: translateX(0);
+            background: #fafafa;
+            padding: 5.2rem 4.2rem;
         }
 
         .anne-timeline-content h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            color: var(--sa-ink);
-            margin-bottom: 1rem;
+            color: #333;
+            margin-bottom: 1.2rem;
             line-height: 1.3;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: -0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .anne-timeline-item:hover .anne-timeline-content h3 {
+            color: #0e5e6f;
+            transform: translateY(-2px);
+        }
+
+        .anne-timeline-item:nth-child(even):hover .anne-timeline-content h3 {
+            color: #7fb069;
         }
 
         .anne-timeline-content p {
-            color: var(--sa-ink);
-            opacity: 0.8;
-            font-size: 1rem;
+            color: #666;
+            opacity: 0.7;
+            font-size: 1.05rem;
             line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .anne-timeline-item:hover .anne-timeline-content p {
+            opacity: 0.8;
+            transform: translateY(-1px);
+        }
+
+        /* Placeholder content for images */
+        .image-placeholder .placeholder-content {
+            text-align: center;
+            color: #666;
+            opacity: 0.7;
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .anne-timeline-image:hover .placeholder-content {
+            transform: scale(1.05);
+        }
+
+        .image-placeholder .placeholder-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.2rem;
+            line-height: 1;
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .anne-timeline-image:hover .placeholder-icon {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+
+        .image-placeholder .placeholder-content p {
+            font-size: 0.95rem;
+            line-height: 1.3;
+            margin: 0;
+            color: #666;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .anne-timeline-image:hover .placeholder-content p {
+            opacity: 0.7;
+        }
+
+        /* Keyframe for shimmer effect */
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ===== SERVICES SECTION ===== */
@@ -1380,6 +1558,204 @@
                 min-height: 250px;
             }
         }
+
+        /* ===== TIMELINE RESPONSIVE STYLES (ELITE) ===== */
+        @media (max-width: 1024px) {
+            .anne-timeline-item {
+                min-height: 450px;
+                padding: 3.5rem 0;
+            }
+
+            .anne-timeline-image {
+                height: 450px;
+                padding: 1.5rem;
+            }
+
+            .anne-timeline-content {
+                padding: 4rem 3rem;
+                max-width: 450px;
+            }
+
+            .anne-timeline-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .anne-timeline-content p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .anne-timeline::before {
+                left: 30px;
+                width: 2px;
+            }
+
+            .anne-timeline-item {
+                flex-direction: column !important;
+                min-height: auto;
+                margin-bottom: 0;
+                padding-left: 60px;
+                position: relative;
+            }
+
+            .anne-timeline-image {
+                flex: none;
+                width: 100%;
+                height: 250px;
+                margin-bottom: 2rem;
+                order: 1;
+                padding: 0;
+            }
+
+            .anne-timeline-image .image-placeholder {
+                border: 3px solid #0e5e6f !important;
+                border-radius: 8px;
+            }
+
+            .anne-timeline-dot {
+                position: absolute;
+                left: 0;
+                top: 125px;
+                transform: translateX(-50%);
+                z-index: 3;
+                width: 16px;
+                height: 16px;
+            }
+
+            .anne-year {
+                position: absolute;
+                right: 0;
+                top: 125px;
+                transform: translateY(-50%);
+                font-size: 0.75rem;
+                opacity: 1;
+                color: #666;
+                background: #f8f6f3;
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+            }
+
+            .anne-timeline-item:nth-child(even) .anne-year {
+                left: auto;
+                right: 0;
+                transform: translateY(-50%);
+            }
+
+            .anne-timeline-content {
+                flex: none;
+                width: 100%;
+                padding: 2rem;
+                order: 2;
+                margin: 0;
+                transform: translateX(0) !important;
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .anne-timeline-content h3 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+
+            .anne-timeline-content p {
+                font-size: 0.95rem;
+            }
+
+            .placeholder-icon {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .placeholder-content p {
+                font-size: 0.85rem;
+            }
+
+            .anne-timeline-item:hover .anne-timeline-dot {
+                transform: translateX(-50%) scale(1.1);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .anne-timeline::before {
+                left: 25px;
+            }
+
+            .anne-timeline-item {
+                padding-left: 50px;
+                margin-bottom: 2rem;
+                min-height: 350px;
+            }
+
+            .anne-timeline-image {
+                height: 200px;
+                margin-bottom: 1.5rem;
+            }
+
+            .anne-timeline-dot {
+                left: 0;
+                width: 14px;
+                height: 14px;
+                top: 100px;
+            }
+
+            .anne-year {
+                font-size: 0.7rem;
+                top: 100px;
+                padding: 0.2rem 0.4rem;
+            }
+
+            .anne-timeline-content {
+                padding: 1.5rem;
+            }
+
+            .anne-timeline-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .anne-timeline-content p {
+                font-size: 0.9rem;
+            }
+
+            .placeholder-icon {
+                font-size: 2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .placeholder-content p {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .anne-timeline::before {
+                left: 20px;
+            }
+
+            .anne-timeline-item {
+                padding-left: 40px;
+            }
+
+            .anne-timeline-dot {
+                width: 12px;
+                height: 12px;
+            }
+
+            .anne-year {
+                font-size: 0.65rem;
+                padding: 0.15rem 0.3rem;
+            }
+
+            .anne-timeline-content h3 {
+                font-size: 1.1rem;
+            }
+
+            .anne-timeline-content p {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body style="">
@@ -1518,11 +1894,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="anne-timeline-dot">
-                        <span class="anne-year">2020</span>
-                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-year">2020</div>
                     <div class="anne-timeline-content">
-                        <h3>Fundación de Sueño Andino</h3>
+                        <h3>Nacimiento de Sueño Andino</h3>
                         <p>Nacimiento de nuestra organización con la visión clara de transformar territorios a través de metodologías regenerativas y participación comunitaria activa.</p>
                     </div>
                 </div>
@@ -1537,11 +1912,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="anne-timeline-dot">
-                        <span class="anne-year">2021</span>
-                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-year">2021</div>
                     <div class="anne-timeline-content">
-                        <h3>Primeros Proyectos de Educación Regenerativa</h3>
+                        <h3>Primeros Programas Educativos</h3>
                         <p>Implementamos nuestros primeros programas de educación regenerativa en comunidades andinas, estableciendo las bases metodológicas que nos caracterizan.</p>
                     </div>
                 </div>
@@ -1556,11 +1930,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="anne-timeline-dot">
-                        <span class="anne-year">2022</span>
-                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-year">2022</div>
                     <div class="anne-timeline-content">
-                        <h3>Expansión a 15+ Comunidades</h3>
+                        <h3>Expansión Territorial</h3>
                         <p>Ampliamos nuestro alcance a más de 15 comunidades andinas en Perú, Bolivia y Ecuador, consolidando nuestra presencia regional.</p>
                     </div>
                 </div>
@@ -1575,11 +1948,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="anne-timeline-dot">
-                        <span class="anne-year">2023</span>
-                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-year">2023</div>
                     <div class="anne-timeline-content">
-                        <h3>1,200+ Personas Beneficiadas</h3>
+                        <h3>Impacto Medible</h3>
                         <p>Alcanzamos un hito importante: más de 1,200 personas han sido beneficiadas directamente por nuestros programas de desarrollo territorial regenerativo.</p>
                     </div>
                 </div>
@@ -1594,12 +1966,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="anne-timeline-dot">
-                        <span class="anne-year">2024</span>
-                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-year">2024</div>
                     <div class="anne-timeline-content">
-                        <h3>Consolidación y Futuro</h3>
-                        <p>Continuamos expandiendo nuestro impacto con nuevos proyectos innovadores y alianzas estratégicas que fortalecen el desarrollo territorial regenerativo en Latinoamérica.</p>
+                        <h3>Visión de Futuro</h3>
+                        <p>Continuamos expandiendo nuestro impacto con nuevas metodologías y tecnologías para el desarrollo territorial regenerativo en toda la región andina.</p>
                     </div>
                 </div>
             </div>
@@ -1952,6 +2323,62 @@
             if (e.key === 'Escape') {
                 closeGuideModal();
             }
+        });
+
+        // Timeline scroll animations - Elite
+        const timelineItems = document.querySelectorAll('.anne-timeline-item');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('animate');
+                    }, index * 200); // Staggered animation
+                }
+            });
+        }, observerOptions);
+
+        timelineItems.forEach(item => {
+            timelineObserver.observe(item);
+        });
+
+        // Enhanced hover effects for timeline
+        timelineItems.forEach(item => {
+            const image = item.querySelector('.anne-timeline-image');
+            const content = item.querySelector('.anne-timeline-content');
+            const dot = item.querySelector('.anne-timeline-dot');
+            const year = item.querySelector('.anne-year');
+
+            item.addEventListener('mouseenter', () => {
+                // Add subtle parallax effect
+                if (image) {
+                    image.style.transform = 'scale(1.02) translateY(-2px)';
+                }
+                if (content) {
+                    content.style.transform = 'translateY(-2px)';
+                }
+                if (dot) {
+                    dot.style.transform = 'translate(-50%, -50%) scale(1.2)';
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                // Reset transforms
+                if (image) {
+                    image.style.transform = 'scale(1) translateY(0)';
+                }
+                if (content) {
+                    content.style.transform = 'translateY(0)';
+                }
+                if (dot) {
+                    dot.style.transform = 'translate(-50%, -50%) scale(1)';
+                }
+            });
         });
     </script>
 
