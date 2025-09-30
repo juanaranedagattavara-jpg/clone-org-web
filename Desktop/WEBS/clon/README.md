@@ -23,16 +23,19 @@ Sueño Andino impulsa proyectos de desarrollo territorial que devuelven vitalida
 ## 📁 Estructura del Proyecto
 
 ```
-├── sueño-andino-clone.html          # Página principal optimizada
-├── sueño-andino-wordpress.html      # Versión para WordPress
+├── sueño-andino-wordpress.html      # Página principal optimizada (ÚNICO)
 ├── blog-sueño-andino.html           # Página del blog
-├── articulo-*.html                  # Artículos del blog
+├── articulo-metodologias-regenerativas.html  # Artículo de ejemplo
 ├── plantilla-articulo-blog.html     # Plantilla para artículos
 ├── popup-lead-magnet.html           # Popup de lead magnet
 ├── GUIA-CLIENTE-BLOG.md             # Guía para clientes
 ├── README-WordPress.md              # Documentación WordPress
 ├── package.json                     # Configuración del proyecto
-└── .gitignore                       # Archivos ignorados por Git
+├── config.json                      # Configuración centralizada
+├── optimize.py / optimize-simple.py # Scripts de optimización
+├── server.py                        # Servidor Python local
+├── .gitignore                       # Archivos ignorados por Git
+└── LICENSE                          # Licencia MIT
 ```
 
 ## 🎨 Diseño
@@ -100,23 +103,32 @@ El sitio está completamente optimizado para:
 
 ## 🎯 Secciones Principales
 
-1. **Hero**: Presentación principal con estadísticas
-2. **Por qué Existimos**: Grid 2x3 con imágenes y texto
-3. **Timeline**: Historia de la organización
-4. **Servicios**: Oferta de servicios
-5. **Impacto Real**: Testimonios y casos de éxito
-6. **Equipo**: Directorio y equipo de trabajo
-7. **Contacto**: Formulario y información de contacto
+1. **Hero**: Presentación principal con estadísticas impactantes
+2. **Por qué Existimos**: Grid 2x3 clonado de Communities In Schools
+3. **Timeline**: Diseño Anne Frank (99% fidelidad) con 4 puntos clave
+4. **Servicios**: Diseño TailGrids (95% fidelidad) con tarjetas modernas
+5. **Testimonios**: Casos de éxito con diseño moderno
+6. **Equipo**: Separado en Directorio (6) y Equipo (3) con elementos decorativos
+7. **Contacto**: Formulario integrado y información completa
+
+## 🎨 Diseños Clonados (Alta Fidelidad)
+
+- **Sección Servicios**: Clonada de TailGrids (95% fidelidad)
+- **Timeline**: Inspirado en Anne Frank Museum (99% fidelidad)
+- **Testimonios**: Diseño moderno con tarjetas elegantes
+- **Equipo**: Diseño moderno con puntos decorativos y formas abstractas
 
 ## 🔧 Optimizaciones Implementadas
 
-- ✅ Código HTML semántico y accesible
-- ✅ CSS optimizado con variables y reutilización
-- ✅ JavaScript modular y eficiente
-- ✅ Imágenes optimizadas con placeholders
-- ✅ Carga rápida y rendimiento optimizado
-- ✅ SEO básico implementado
-- ✅ Diseño mobile-first
+- ✅ **Código HTML**: Semántico, accesible y sin enlaces hardcodeados
+- ✅ **CSS**: Optimizado con variables, sin duplicaciones, responsive perfecto
+- ✅ **JavaScript**: Vanilla JS eficiente con IntersectionObserver
+- ✅ **Imágenes**: Placeholders optimizados con iconos temáticos
+- ✅ **Rendimiento**: Carga rápida, sin archivos innecesarios
+- ✅ **SEO**: Meta tags optimizados, estructura semántica
+- ✅ **Responsive**: Mobile-first con breakpoints perfectos
+- ✅ **Mantenimiento**: Código limpio, documentado y modular
+- ✅ **Cache**: Sin archivos temporales, optimización automática
 
 ## 📊 Estadísticas del Proyecto
 
