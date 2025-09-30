@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Sueño Andino</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         /* ===== RESET Y BASE ===== */
         * {
@@ -422,6 +423,160 @@
                 justify-content: center;
             }
         }
+
+        /* ===== POPUP LEAD MAGNET RESUMIDO ===== */
+        .guide-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10000;
+            display: none;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 20px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0e5e6f 0%, #0a4a5a 100%);
+            color: white;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .modal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0;
+            color: white;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .guide-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .guide-form input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .guide-form input:focus {
+            outline: none;
+            border-color: #0e5e6f;
+            box-shadow: 0 0 0 3px rgba(14, 94, 111, 0.1);
+        }
+
+        .btn-large {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: #0e5e6f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-large:hover {
+            background: #0a4a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(14, 94, 111, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                margin: 10px;
+                max-width: calc(100% - 20px);
+            }
+
+            .modal-header {
+                padding: 1.5rem;
+            }
+
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -429,19 +584,19 @@
     <header class="site-header">
         <div class="container">
             <div class="header-content">
-                <a href="sueño-andino-clone.html" class="site-logo">
+                <a href="sueño-andino-wordpress.html" class="site-logo">
                     <div class="logo-icon">SA</div>
                     <span class="site-title">Sueño Andino</span>
                 </a>
 
                 <nav class="main-navigation">
                     <ul class="nav-menu">
-                        <li><a href="sueño-andino-clone.html#servicios">Servicios</a></li>
-                        <li><a href="sueño-andino-clone.html#equipo">Nosotros</a></li>
-                        <li><a href="sueño-andino-clone.html#contacto">Contacto</a></li>
+                        <li><a href="sueño-andino-wordpress.html#servicios">Servicios</a></li>
+                        <li><a href="sueño-andino-wordpress.html#equipo">Nosotros</a></li>
+                        <li><a href="sueño-andino-wordpress.html#contacto">Contacto</a></li>
                         <li><a href="blog-sueño-andino.html" class="active">Blog</a></li>
                     </ul>
-                    <a href="sueño-andino-clone.html#guia" class="btn btn-secondary">Descarga Guía Gratuita</a>
+                    <a href="#" onclick="showGuideModal(); return false;" class="btn btn-secondary">Descarga Guía Gratuita</a>
                 </nav>
             </div>
         </div>
@@ -483,7 +638,7 @@
                                 territorial regenerativo para los próximos años.
                             </p>
                             <div class="blog-meta">Publicado el 10 de septiembre, 2024</div>
-                            <a href="articulo-futuro-desarrollo-territorial.html" class="btn btn-primary btn-small">Leer más</a>
+                            <a href="articulo-metodologias-regenerativas.html" class="btn btn-primary btn-small">Leer más</a>
                         </div>
                     </article>
 
@@ -576,7 +731,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="sueño-andino-clone.html" class="site-logo">
+                    <a href="sueño-andino-wordpress.html" class="site-logo">
                         <div class="footer-logo">SA</div>
                         <span class="footer-title">Sueño Andino</span>
                     </a>
@@ -588,11 +743,11 @@
                 <div class="footer-section">
                     <h3>Navegación</h3>
                     <ul class="footer-menu">
-                        <li><a href="sueño-andino-clone.html#servicios">Servicios</a></li>
-                        <li><a href="sueño-andino-clone.html#equipo">Nosotros</a></li>
-                        <li><a href="sueño-andino-clone.html#contacto">Contacto</a></li>
+                        <li><a href="sueño-andino-wordpress.html#servicios">Servicios</a></li>
+                        <li><a href="sueño-andino-wordpress.html#equipo">Nosotros</a></li>
+                        <li><a href="sueño-andino-wordpress.html#contacto">Contacto</a></li>
                         <li><a href="blog-sueño-andino.html">Blog</a></li>
-                        <li><a href="sueño-andino-clone.html#guia">Guía Gratuita</a></li>
+                        <li><a href="sueño-andino-wordpress.html#guia">Guía Gratuita</a></li>
                     </ul>
                 </div>
 
@@ -645,6 +800,80 @@
                     submitBtn.disabled = false;
                 }, 1500);
             });
+        });
+    </script>
+
+    <!-- POPUP LEAD MAGNET RESUMIDO -->
+    <div id="guideModal" class="guide-modal">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-icon">📚</div>
+                    <h3>Descarga tu Guía Gratuita</h3>
+                    <button class="modal-close" onclick="closeGuideModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form class="guide-form" id="guideForm">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Tu nombre completo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="tu@email.com" required>
+                        </div>
+                        <button type="submit" class="btn-large">
+                            <span>Descargar Guía Gratuita</span>
+                            <span>📥</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para mostrar el popup
+        function showGuideModal() {
+            document.getElementById('guideModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Función para cerrar el popup
+        function closeGuideModal() {
+            document.getElementById('guideModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuideModal();
+            }
+        });
+
+        // Form handling
+        document.getElementById('guideForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalHTML = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<span>Enviando...</span>';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('¡Guía descargada exitosamente! Revisa tu email.');
+                closeGuideModal();
+                this.reset();
+                submitBtn.innerHTML = originalHTML;
+                submitBtn.disabled = false;
+            }, 1500);
+        });
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeGuideModal();
+            }
         });
     </script>
 </body>

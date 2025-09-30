@@ -4,172 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sueño Andino - Desarrollo Territorial Regenerativo</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* ===== RESET Y BASE ===== */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
+        /* ===== CSS ESPECÍFICO DE LA PÁGINA PRINCIPAL ===== */
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #1c1c1e;
-            background-color: #ffffff;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
-            width: 100%;
-            max-width: 100vw;
             padding-top: 80px;
-        }
-
-        /* ===== VARIABLES CSS ===== */
-        :root {
-            --sa-primary: #0e5e6f;
-            --sa-accent: #7fb069;
-            --sa-sand: #d9c8b4;
-            --sa-ink: #1c1c1e;
-            --sa-cloud: #f5f6f7;
-            --sa-white: #ffffff;
-        }
-
-        /* ===== CONTENEDOR PRINCIPAL ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        /* ===== SECCIONES PRINCIPALES ===== */
-        section {
-            width: 100%;
-            overflow-x: hidden;
-            max-width: 100vw;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--sa-ink);
-            margin-bottom: 1rem;
-        }
-
-        .section-header p {
-            font-size: 1.25rem;
-            color: var(--sa-ink);
-            opacity: 0.8;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ===== HEADER ===== */
-        .site-header {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            width: 100%;
-            overflow-x: hidden;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-        }
-
-        .site-logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-decoration: none;
-            color: var(--sa-ink);
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--sa-primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .site-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--sa-ink);
-        }
-
-        .main-navigation {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--sa-ink);
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-menu a:hover {
-            color: var(--sa-primary);
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--sa-primary);
-            border: 2px solid var(--sa-primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--sa-primary);
-            color: white;
-            transform: translateY(-2px);
         }
 
         /* ===== HERO SECTION ===== */
@@ -213,16 +52,6 @@
             justify-content: center;
             margin-bottom: 3rem;
             flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--sa-primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: #0a4a5a;
-            transform: translateY(-2px);
         }
 
         /* ===== HERO STATS ===== */
@@ -999,7 +828,7 @@
         .team-grid-small {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 3rem;
+            gap: 1.5rem;
             max-width: 900px;
             margin: 0 auto;
         }
@@ -1019,6 +848,41 @@
             width: 200px;
             height: 200px;
             margin: 0 auto 1.5rem;
+        }
+
+        .team-grid-small .member-image {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 0.8rem;
+        }
+
+        .team-grid-small .placeholder-icon {
+            font-size: 1.5rem;
+        }
+
+        .team-grid-small .decorative-dots {
+            width: 16px;
+            height: 16px;
+            top: -4px;
+            left: -8px;
+        }
+
+        .team-grid-small .decorative-shape {
+            width: 24px;
+            height: 24px;
+            bottom: -4px;
+            right: -4px;
+        }
+
+        .team-grid-small .team-member h4 {
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .team-grid-small .team-member p {
+            font-size: 0.75rem;
+            opacity: 0.8;
         }
 
         .image-placeholder {
@@ -1280,181 +1144,6 @@
             opacity: 0.6;
         }
 
-        /* ===== POPUP LEAD MAGNET COMPACTO ===== */
-        .guide-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10000;
-            display: none;
-        }
-
-        .modal-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            backdrop-filter: blur(3px);
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 16px;
-            max-width: 480px;
-            width: 100%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            animation: modalSlideIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            overflow: hidden;
-        }
-
-        @keyframes modalSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .modal-header {
-            padding: 1.5rem 1.5rem 1rem;
-            text-align: center;
-            position: relative;
-            background: linear-gradient(135deg, var(--sa-primary) 0%, #0a4a5a 100%);
-            color: white;
-        }
-
-        .modal-icon {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .modal-header h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 0.25rem;
-            color: white;
-        }
-
-        .modal-subtitle {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            margin-bottom: 0;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            font-size: 1.2rem;
-            color: white;
-            cursor: pointer;
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .modal-close:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: rotate(90deg);
-        }
-
-        .modal-body {
-            padding: 1.5rem;
-        }
-
-        .guide-benefits-compact {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            justify-content: center;
-        }
-
-        .benefit-compact {
-            background: var(--sa-cloud);
-            color: var(--sa-ink);
-            padding: 0.5rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .guide-form-compact .form-row {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 1rem;
-        }
-
-        .guide-form-compact input {
-            flex: 1;
-            padding: 12px 16px;
-            border: 2px solid #e9ecef;
-            border-radius: 8px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            background: white;
-            color: var(--sa-ink);
-        }
-
-        .guide-form-compact input:focus {
-            outline: none;
-            border-color: var(--sa-primary);
-            box-shadow: 0 0 0 2px rgba(14, 94, 111, 0.1);
-        }
-
-        .btn-download {
-            width: 100%;
-            padding: 14px 20px;
-            font-size: 1rem;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            background: var(--sa-primary);
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-download:hover {
-            background: #0a4a5a;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(14, 94, 111, 0.3);
-        }
-
-        .btn-download:active {
-            transform: translateY(0);
-        }
-
-        .privacy-note {
-            text-align: center;
-            font-size: 0.8rem;
-            color: #666;
-            margin-top: 0.75rem;
-        }
 
         /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
@@ -1619,7 +1308,7 @@
 
             .team-grid-small {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
+                gap: 1.5rem;
             }
 
             .team-header h2 {
@@ -1692,8 +1381,8 @@
             }
 
             .team-grid-small {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
             }
 
             .team-header h2 {
@@ -2137,6 +1826,7 @@
                 font-size: 0.85rem;
             }
         }
+
     </style>
 </head>
 <body style="">
@@ -2144,20 +1834,20 @@
     <header class="site-header" style="">
         <div class="container">
             <div class="header-content">
-                <a href="##" class="site-logo">
+                <a href="#" class="site-logo">
                     <div class="logo-icon">SA</div>
                     <span class="site-title">Sueño Andino</span>
                 </a>
 
                 <nav class="main-navigation">
                     <ul class="nav-menu">
-                        <li><a href="##servicios">Servicios</a></li>
-                        <li><a href="##nosotros">Nosotros</a></li>
-                        <li><a href="##equipo">Equipo</a></li>
-                        <li><a href="##contacto">Contacto</a></li>
-                        <li><a href="file:///C:/Users/Juan/Desktop/WEBS/clon/blog-sueño-andino.html">Blog</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="blog-sueño-andino.html">Blog</a></li>
                     </ul>
-                    <a href="##guia" class="btn btn-secondary">Descarga Guía Gratuita</a>
+                    <a href="#" onclick="showGuideModal(); return false;" class="btn btn-secondary">Descarga Guía Gratuita</a>
                 </nav>
             </div>
         </div>
@@ -2176,8 +1866,8 @@
                     prosperidad consciente y regenerativa.
                 </p>
                 <div class="hero-buttons">
-                    <a href="##servicios" class="btn btn-primary">Conoce Nuestros Servicios</a>
-                    <a href="##guia" class="btn btn-secondary">Descarga Guía Gratuita</a>
+                    <a href="#servicios" class="btn btn-primary">Conoce Nuestros Servicios</a>
+                    <a href="#" onclick="showGuideModal(); return false;" class="btn btn-secondary">Descarga Guía Gratuita</a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -2272,16 +1962,16 @@
                             <div class="placeholder-content">
                                 <div class="placeholder-icon">🌱</div>
                                 <p>Fundación de Sueño Andino</p>
-                            </div>
-                        </div>
+                    </div>
+                </div>
                     </div>
                     <div class="anne-timeline-dot"></div>
                     <div class="anne-year">2020</div>
                     <div class="anne-timeline-content">
                         <h3>Nacimiento de Sueño Andino</h3>
                         <p>Nacimiento de nuestra organización con la visión clara de transformar territorios a través de metodologías regenerativas y participación comunitaria activa.</p>
-                    </div>
                 </div>
+                    </div>
 
                 <!-- 2021 - Primeros Proyectos -->
                 <div class="anne-timeline-item">
@@ -2290,9 +1980,9 @@
                             <div class="placeholder-content">
                                 <div class="placeholder-icon">🎓</div>
                                 <p>Primeros programas educativos</p>
-                            </div>
-                        </div>
+                </div>
                     </div>
+                </div>
                     <div class="anne-timeline-dot"></div>
                     <div class="anne-year">2021</div>
                     <div class="anne-timeline-content">
@@ -2348,15 +2038,15 @@
                 <p class="section-subtitle">Lo que Ofrecemos</p>
                 <h2>Nuestros Mejores Servicios</h2>
                 <p class="section-description">
-                    Nuestros servicios están diseñados para generar impacto real en
-                    las comunidades andinas, combinando sabiduría ancestral con
-                    metodologías modernas de desarrollo territorial regenerativo.
-                </p>
+                        Nuestros servicios están diseñados para generar impacto real en
+                        las comunidades andinas, combinando sabiduría ancestral con
+                        metodologías modernas de desarrollo territorial regenerativo.
+                    </p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon-wrapper">
-                        <div class="service-icon">🎓</div>
+                    <div class="service-icon">🎓</div>
                     </div>
                     <h3>Educación Regenerativa</h3>
                     <p>
@@ -2366,7 +2056,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon-wrapper">
-                        <div class="service-icon">🚀</div>
+                    <div class="service-icon">🚀</div>
                     </div>
                     <h3>Emprendimiento Social</h3>
                     <p>
@@ -2376,7 +2066,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-icon-wrapper">
-                        <div class="service-icon">🗺️</div>
+                    <div class="service-icon">🗺️</div>
                     </div>
                     <h3>Consultoría Territorial</h3>
                     <p>
@@ -2404,11 +2094,11 @@
                     <div class="testimonial-header">
                         <div class="testimonial-avatar">
                             <div class="avatar-placeholder">MQ</div>
-                        </div>
+                </div>
                         <div class="testimonial-info">
                             <h4>María Quispe</h4>
                             <p>Líder Comunitaria</p>
-                        </div>
+                </div>
                     </div>
                     <blockquote>
                         "Nuestro territorio volvió a latir. El acompañamiento de Sueño Andino nos enseñó a ver nuestro territorio con nuevos ojos, regenerando no solo la tierra sino también nuestras relaciones comunitarias."
@@ -2694,7 +2384,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <a href="##" class="site-logo">
+                    <a href="#" class="site-logo">
                         <div class="footer-logo">SA</div>
                         <span class="footer-title">Sueño Andino</span>
                     </a>
@@ -2706,12 +2396,12 @@
                 <div class="footer-section">
                     <h3>Navegación</h3>
                     <ul class="footer-menu">
-                        <li><a href="##servicios">Servicios</a></li>
-                        <li><a href="##nosotros">Nosotros</a></li>
-                        <li><a href="##equipo">Equipo</a></li>
-                        <li><a href="##contacto">Contacto</a></li>
-                        <li><a href="file:///C:/Users/Juan/Desktop/WEBS/clon/blog-sueño-andino.html">Blog</a></li>
-                        <li><a href="##guia">Guía Gratuita</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="blog-sueño-andino.html">Blog</a></li>
+                        <li><a href="#guia">Guía Gratuita</a></li>
                     </ul>
                 </div>
 
@@ -2763,135 +2453,8 @@
         </div>
     </div>
 
-    <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const href = this.getAttribute('href');
-                
-                if (href === '#guia') {
-                    showGuideModal();
-                    return;
-                }
-                
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start',
-                    });
-                }
-            });
-        });
+    <script src="scripts.js"></script>
 
-        // Modal de guía
-        function showGuideModal() {
-            document.getElementById('guideModal').style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeGuideModal() {
-            document.getElementById('guideModal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cerrar modal al hacer clic fuera
-        document.getElementById('guideModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeGuideModal();
-            }
-        });
-
-        // Form handling
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalText = submitBtn.textContent;
-                
-                submitBtn.textContent = 'Enviando...';
-                submitBtn.disabled = true;
-                
-                setTimeout(() => {
-                    // Cerrar modal si es el formulario de guía
-                    if (form.classList.contains('guide-form-compact')) {
-                        alert('¡Guía descargada exitosamente! Revisa tu email.');
-                        closeGuideModal();
-                    } else {
-                        alert('¡Mensaje enviado correctamente!');
-                    }
-                    form.reset();
-                    submitBtn.textContent = originalText;
-                    submitBtn.disabled = false;
-                }, 1500);
-            });
-        });
-
-        // Cerrar modal con tecla Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeGuideModal();
-            }
-        });
-
-        // Timeline scroll animations - Elite
-        const timelineItems = document.querySelectorAll('.anne-timeline-item');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const timelineObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('animate');
-                    }, index * 200); // Staggered animation
-                }
-            });
-        }, observerOptions);
-
-        timelineItems.forEach(item => {
-            timelineObserver.observe(item);
-        });
-
-        // Enhanced hover effects for timeline
-        timelineItems.forEach(item => {
-            const image = item.querySelector('.anne-timeline-image');
-            const content = item.querySelector('.anne-timeline-content');
-            const dot = item.querySelector('.anne-timeline-dot');
-            const year = item.querySelector('.anne-year');
-
-            item.addEventListener('mouseenter', () => {
-                // Add subtle parallax effect
-                if (image) {
-                    image.style.transform = 'scale(1.02) translateY(-2px)';
-                }
-                if (content) {
-                    content.style.transform = 'translateY(-2px)';
-                }
-                if (dot) {
-                    dot.style.transform = 'translate(-50%, -50%) scale(1.2)';
-                }
-            });
-
-            item.addEventListener('mouseleave', () => {
-                // Reset transforms
-                if (image) {
-                    image.style.transform = 'scale(1) translateY(0)';
-                }
-                if (content) {
-                    content.style.transform = 'translateY(0)';
-                }
-                if (dot) {
-                    dot.style.transform = 'translate(-50%, -50%) scale(1)';
-                }
-            });
-        });
-    </script>
 
 
 </body></html>
