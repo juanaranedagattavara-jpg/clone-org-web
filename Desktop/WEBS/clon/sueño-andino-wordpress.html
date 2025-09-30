@@ -398,10 +398,9 @@
         /* ===== TIMELINE SECTION (ELITE Anne Frank Style - 99% Fidelity) ===== */
         .timeline-section {
             background: #f8f6f3;
-            padding: 0;
+            padding: 80px 0;
             margin: 0;
             position: relative;
-            overflow: hidden;
         }
 
         .anne-timeline {
@@ -429,8 +428,8 @@
             align-items: center;
             margin-bottom: 0;
             position: relative;
-            min-height: 500px;
-            padding: 4rem 0;
+            min-height: 350px;
+            padding: 2rem 0;
             opacity: 0;
             transform: translateY(50px);
             transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -451,14 +450,14 @@
 
         .anne-timeline-image {
             flex: 0 0 50%;
-            height: 500px;
+            height: 350px;
             margin: 0;
             position: relative;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            padding: 1.5rem;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
@@ -545,45 +544,48 @@
         }
 
         .anne-year {
-            color: #666;
-            font-size: 0.8rem;
-            font-weight: 600;
+            color: #0e5e6f;
+            font-size: 0.9rem;
+            font-weight: 700;
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.5px;
             position: absolute;
             right: 30px;
             white-space: nowrap;
-            opacity: 0;
-            transform: translateX(10px);
+            opacity: 1;
+            transform: translateX(0);
+            background: #f8f6f3;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            border: 2px solid #0e5e6f;
             transition: all 0.3s ease;
         }
 
         .anne-timeline-item:nth-child(even) .anne-year {
             left: 30px;
             right: auto;
-            transform: translateX(-10px);
+            transform: translateX(0);
+            color: #7fb069;
+            border-color: #7fb069;
         }
 
         .anne-timeline-item:hover .anne-year {
-            opacity: 1;
-            transform: translateX(0);
-            color: #0e5e6f;
-            font-size: 0.85rem;
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(14, 94, 111, 0.3);
         }
 
         .anne-timeline-item:nth-child(even):hover .anne-year {
-            transform: translateX(0);
-            color: #7fb069;
+            box-shadow: 0 2px 8px rgba(127, 176, 105, 0.3);
         }
 
         .anne-timeline-content {
             flex: 0 0 50%;
-            max-width: 500px;
-            padding: 5rem 4rem;
+            max-width: 450px;
+            padding: 3rem 2.5rem;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-            margin: 0 2rem;
+            margin: 0 1.5rem;
             transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -602,10 +604,10 @@
         }
 
         .anne-timeline-content h3 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: #333;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             line-height: 1.3;
             font-family: 'Inter', sans-serif;
             letter-spacing: -0.5px;
@@ -624,7 +626,7 @@
         .anne-timeline-content p {
             color: #666;
             opacity: 0.7;
-            font-size: 1.05rem;
+            font-size: 1rem;
             line-height: 1.6;
             font-family: 'Inter', sans-serif;
             font-weight: 400;
@@ -1562,26 +1564,31 @@
         /* ===== TIMELINE RESPONSIVE STYLES (ELITE) ===== */
         @media (max-width: 1024px) {
             .anne-timeline-item {
-                min-height: 450px;
-                padding: 3.5rem 0;
+                min-height: 300px;
+                padding: 2.5rem 0;
             }
 
             .anne-timeline-image {
-                height: 450px;
+                height: 300px;
                 padding: 1.5rem;
             }
 
             .anne-timeline-content {
-                padding: 4rem 3rem;
-                max-width: 450px;
+                padding: 2.5rem 2rem;
+                max-width: 400px;
             }
 
             .anne-timeline-content h3 {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
 
             .anne-timeline-content p {
-                font-size: 1rem;
+                font-size: 0.95rem;
+            }
+
+            .anne-year {
+                font-size: 0.85rem;
+                padding: 0.25rem 0.5rem;
             }
         }
 
@@ -1628,18 +1635,23 @@
                 right: 0;
                 top: 125px;
                 transform: translateY(-50%);
-                font-size: 0.75rem;
+                font-size: 0.8rem;
+                font-weight: 700;
                 opacity: 1;
-                color: #666;
+                color: #0e5e6f;
                 background: #f8f6f3;
-                padding: 0.25rem 0.5rem;
-                border-radius: 4px;
+                padding: 0.4rem 0.7rem;
+                border-radius: 6px;
+                border: 2px solid #0e5e6f;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             }
 
             .anne-timeline-item:nth-child(even) .anne-year {
                 left: auto;
                 right: 0;
                 transform: translateY(-50%);
+                color: #7fb069;
+                border-color: #7fb069;
             }
 
             .anne-timeline-content {
@@ -1701,9 +1713,11 @@
             }
 
             .anne-year {
-                font-size: 0.7rem;
+                font-size: 0.75rem;
+                font-weight: 700;
                 top: 100px;
-                padding: 0.2rem 0.4rem;
+                padding: 0.35rem 0.6rem;
+                border-width: 2px;
             }
 
             .anne-timeline-content {
@@ -1744,8 +1758,10 @@
             }
 
             .anne-year {
-                font-size: 0.65rem;
-                padding: 0.15rem 0.3rem;
+                font-size: 0.7rem;
+                font-weight: 700;
+                padding: 0.3rem 0.5rem;
+                border-width: 2px;
             }
 
             .anne-timeline-content h3 {
@@ -1956,23 +1972,6 @@
                     </div>
                 </div>
 
-                <!-- 2024 - Futuro -->
-                <div class="anne-timeline-item">
-                    <div class="anne-timeline-image">
-                        <div class="image-placeholder">
-                            <div class="placeholder-content">
-                                <div class="placeholder-icon">🚀</div>
-                                <p>Visión de futuro</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="anne-timeline-dot"></div>
-                    <div class="anne-year">2024</div>
-                    <div class="anne-timeline-content">
-                        <h3>Visión de Futuro</h3>
-                        <p>Continuamos expandiendo nuestro impacto con nuevas metodologías y tecnologías para el desarrollo territorial regenerativo en toda la región andina.</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
