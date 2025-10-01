@@ -1,0 +1,88 @@
+<?php
+/**
+ * The main template file
+ *
+ * @package SueñoAndino
+ */
+
+get_header(); ?>
+
+<!-- Hero Section -->
+<div class="hero-section" style="background: linear-gradient(135deg, #f5f6f7 0%, #ffffff 100%); padding: 120px 0 80px; min-height: 100vh; display: flex; align-items: center; width: 100%;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%;">
+        <div class="hero-content" style="text-align: center; max-width: 1000px; margin: 0 auto;">
+            <h1 class="hero-title" style="font-size: 3rem; font-weight: 700; color: #1c1c1e; margin-bottom: 1.5rem; line-height: 1.2;">Transformando Comunidades Sostenibles</h1>
+            <p class="hero-description" style="font-size: 1.25rem; color: #1c1c1e; opacity: 0.8; margin-bottom: 2.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">Desarrollamos soluciones integrales para el crecimiento territorial sostenible, conectando comunidades con oportunidades de desarrollo.</p>
+            
+            <div class="hero-buttons" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap;">
+                <a href="#servicios" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; background: #0e5e6f; color: white;">Conoce Nuestros Servicios</a>
+                <a href="#" class="btn-secondary" onclick="showGuideModal(); return false;" style="display: inline-block; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid #0e5e6f; background: transparent; color: #0e5e6f;">Descarga Guía Gratuita</a>
+            </div>
+            
+            <div class="hero-stats" style="display: flex; justify-content: center; align-items: center; gap: 2rem; max-width: 800px; margin: 0 auto; flex-wrap: wrap;">
+                <div class="stat-item" style="text-align: center; flex: 1; min-width: 150px;">
+                    <h3 class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #0e5e6f; margin-bottom: 0.5rem;">50+</h3>
+                    <p class="stat-label" style="font-size: 0.9rem; color: #1c1c1e; opacity: 0.7; font-weight: 500;">Proyectos Completados</p>
+                </div>
+                <div class="stat-item" style="text-align: center; flex: 1; min-width: 150px;">
+                    <h3 class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #0e5e6f; margin-bottom: 0.5rem;">15</h3>
+                    <p class="stat-label" style="font-size: 0.9rem; color: #1c1c1e; opacity: 0.7; font-weight: 500;">Años de Experiencia</p>
+                </div>
+                <div class="stat-item" style="text-align: center; flex: 1; min-width: 150px;">
+                    <h3 class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: #0e5e6f; margin-bottom: 0.5rem;">200+</h3>
+                    <p class="stat-label" style="font-size: 0.9rem; color: #1c1c1e; opacity: 0.7; font-weight: 500;">Comunidades Beneficiadas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Services Section -->
+<div class="services-section" id="servicios" style="background: white; padding: 80px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%;">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <p style="color: #0e5e6f; font-weight: 600; margin-bottom: 0.5rem;">Lo que Ofrecemos</p>
+            <h2 style="font-size: 2.5rem; font-weight: 700; color: #1c1c1e; margin-bottom: 1rem;">Nuestros Servicios</h2>
+            <p style="font-size: 1.25rem; color: #1c1c1e; opacity: 0.8; max-width: 600px; margin: 0 auto;">Nuestros servicios están diseñados para generar impacto real en las comunidades, combinando sabiduría ancestral con metodologías modernas.</p>
+        </div>
+        <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
+            <div class="service-card" style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); text-align: center; transition: all 0.3s ease; border: 1px solid #f0f0f0;">
+                <div class="service-icon-wrapper" style="width: 80px; height: 80px; background: linear-gradient(135deg, #0e5e6f 0%, #7fb069 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <p class="service-icon" style="font-size: 2rem; color: white;">🏗️</p>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1c1c1e; margin-bottom: 1rem;">Desarrollo Territorial</h3>
+                <p style="color: #1c1c1e; opacity: 0.8; line-height: 1.6;">Planificación y ejecución de proyectos de desarrollo territorial sostenible que transforman comunidades y generan oportunidades de crecimiento.</p>
+            </div>
+            <div class="service-card" style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); text-align: center; transition: all 0.3s ease; border: 1px solid #f0f0f0;">
+                <div class="service-icon-wrapper" style="width: 80px; height: 80px; background: linear-gradient(135deg, #0e5e6f 0%, #7fb069 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <p class="service-icon" style="font-size: 2rem; color: white;">🌱</p>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1c1c1e; margin-bottom: 1rem;">Sostenibilidad Ambiental</h3>
+                <p style="color: #1c1c1e; opacity: 0.8; line-height: 1.6;">Implementación de prácticas ambientales responsables y sostenibles que protegen el medio ambiente mientras impulsan el desarrollo económico.</p>
+            </div>
+            <div class="service-card" style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); text-align: center; transition: all 0.3s ease; border: 1px solid #f0f0f0;">
+                <div class="service-icon-wrapper" style="width: 80px; height: 80px; background: linear-gradient(135deg, #0e5e6f 0%, #7fb069 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+                    <p class="service-icon" style="font-size: 2rem; color: white;">🤝</p>
+                </div>
+                <h3 style="font-size: 1.5rem; font-weight: 700; color: #1c1c1e; margin-bottom: 1rem;">Participación Comunitaria</h3>
+                <p style="color: #1c1c1e; opacity: 0.8; line-height: 1.6;">Fortalecimiento del tejido social y participación ciudadana activa para construir comunidades más cohesionadas y resilientes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact-section" id="contacto" style="background: #0e5e6f; padding: 80px 0; color: white;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px; width: 100%;">
+        <div class="contact-content" style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: white;">¿Listo para Transformar tu Comunidad?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9;">Contáctanos y descubre cómo podemos ayudarte a desarrollar tu territorio de manera sostenible.</p>
+            <div class="contact-buttons" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:info@sueñoandino.org" class="btn-primary" style="display: inline-block; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid transparent; background: white; color: #0e5e6f;">Contactar Ahora</a>
+                <a href="#" class="btn-secondary" onclick="showGuideModal(); return false;" style="display: inline-block; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid white; background: transparent; color: white;">Descargar Guía</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php get_footer(); ?>

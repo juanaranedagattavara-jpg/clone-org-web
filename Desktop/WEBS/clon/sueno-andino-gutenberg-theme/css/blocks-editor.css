@@ -1,0 +1,488 @@
+/* Editor styles for Sueño Andino blocks */
+
+/* Hero Section Editor Styles */
+.sueno-andino-hero-edit {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.sueno-andino-hero-edit .hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.sueno-andino-hero-edit .hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.sueno-andino-hero-edit .hero-description {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.sueno-andino-hero-edit .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.sueno-andino-hero-edit .hero-stats {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.sueno-andino-hero-edit .stat-item {
+    text-align: center;
+    min-width: 120px;
+}
+
+.sueno-andino-hero-edit .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0e5e6f;
+    margin-bottom: 0.5rem;
+}
+
+.sueno-andino-hero-edit .stat-label {
+    font-size: 0.9rem;
+    color: #1a1a1a;
+    opacity: 0.7;
+}
+
+/* Timeline Editor Styles */
+.sueno-andino-timeline-edit {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.sueno-andino-timeline-edit .timeline-section {
+    background: #f8f6f3;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.sueno-andino-timeline-edit .anne-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sueno-andino-timeline-edit .anne-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d4d4d4;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    min-height: 150px;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-image {
+    flex: 0 0 40%;
+    height: 120px;
+    margin: 0 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0e5e6f;
+    border: 2px solid #f8f6f3;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-content {
+    flex: 0 0 40%;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;
+}
+
+.sueno-andino-timeline-edit .anne-year {
+    display: inline-block;
+    background: #e8f5e8;
+    color: #2d5a2d;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #7fb069;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-content h3 {
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sueno-andino-timeline-edit .anne-timeline-content p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Services Editor Styles */
+.sueno-andino-services-edit {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.sueno-andino-services-edit .services-section {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.sueno-andino-services-edit .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sueno-andino-services-edit .service-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.sueno-andino-services-edit .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.sueno-andino-services-edit .service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(14, 94, 111, 0.1), rgba(127, 176, 105, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sueno-andino-services-edit .service-icon {
+    font-size: 2rem;
+}
+
+.sueno-andino-services-edit .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.sueno-andino-services-edit .service-card p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Testimonials Editor Styles */
+.sueno-andino-testimonials-edit {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.sueno-andino-testimonials-edit .testimonials-section {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.sueno-andino-testimonials-edit .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sueno-andino-testimonials-edit .testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.sueno-andino-testimonials-edit .testimonial-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.sueno-andino-testimonials-edit .testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sueno-andino-testimonials-edit .testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0e5e6f, #7fb069);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.sueno-andino-testimonials-edit .avatar-placeholder {
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.sueno-andino-testimonials-edit .testimonial-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.2rem 0;
+}
+
+.sueno-andino-testimonials-edit .testimonial-info p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.sueno-andino-testimonials-edit .testimonial-card blockquote {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    font-style: normal;
+}
+
+/* Team Editor Styles */
+.sueno-andino-team-edit {
+    border: 2px dashed #ccc;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.sueno-andino-team-edit .team-section {
+    background: white;
+    padding: 40px 20px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.sueno-andino-team-edit .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.sueno-andino-team-edit .team-member {
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.sueno-andino-team-edit .team-member:hover {
+    transform: translateY(-3px);
+}
+
+.sueno-andino-team-edit .member-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+}
+
+.sueno-andino-team-edit .image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.sueno-andino-team-edit .placeholder-icon {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+.sueno-andino-team-edit .decorative-dots {
+    position: absolute;
+    top: -8px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(circle, #0e5e6f 2px, transparent 2px);
+    background-size: 6px 6px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.sueno-andino-team-edit .decorative-shape {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(45deg, #7fb069, #a8d8a8);
+    border-radius: 6px;
+    opacity: 0.8;
+    z-index: 1;
+    transform: rotate(15deg);
+}
+
+.sueno-andino-team-edit .team-member h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.sueno-andino-team-edit .team-member p {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Inspector Controls Styling */
+.components-panel__body .components-base-control {
+    margin-bottom: 16px;
+}
+
+.components-panel__body .components-base-control__label {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.components-panel__body .components-text-control__input {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+}
+
+.components-panel__body .components-textarea-control__input {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 8px 12px;
+    min-height: 80px;
+    resize: vertical;
+}
+
+/* Block Category Styling */
+.block-editor-block-types-list__item[data-type="sueno-andino/hero-section"] .block-editor-block-types-list__item-icon,
+.block-editor-block-types-list__item[data-type="sueno-andino/timeline"] .block-editor-block-types-list__item-icon,
+.block-editor-block-types-list__item[data-type="sueno-andino/services"] .block-editor-block-types-list__item-icon,
+.block-editor-block-types-list__item[data-type="sueno-andino/testimonials"] .block-editor-block-types-list__item-icon,
+.block-editor-block-types-list__item[data-type="sueno-andino/team"] .block-editor-block-types-list__item-icon {
+    background: linear-gradient(135deg, #0e5e6f, #7fb069);
+    color: white;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments for editor */
+@media (max-width: 768px) {
+    .sueno-andino-timeline-edit .anne-timeline::before {
+        left: 20px;
+    }
+    
+    .sueno-andino-timeline-edit .anne-timeline-item {
+        flex-direction: column !important;
+        padding-left: 40px;
+        margin-bottom: 2rem;
+    }
+    
+    .sueno-andino-timeline-edit .anne-timeline-image {
+        flex: none;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 1rem;
+        order: 1;
+    }
+    
+    .sueno-andino-timeline-edit .anne-timeline-dot {
+        left: 0;
+        top: 50px;
+        transform: translateX(-50%);
+    }
+    
+    .sueno-andino-timeline-edit .anne-timeline-content {
+        flex: none;
+        width: 100%;
+        order: 2;
+        margin: 0;
+    }
+}

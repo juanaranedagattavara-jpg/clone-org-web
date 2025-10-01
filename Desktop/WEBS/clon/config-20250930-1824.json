@@ -1,0 +1,29 @@
+{
+  "theme_name": "Sueño Andino - Gutenberg",
+  "version": "1.0.0-optimized",
+  "wordpress_min": "6.0",
+  "php_min": "7.4",
+  "features": [
+    "9 Bloques Gutenberg personalizados",
+    "Formularios funcionales",
+    "Diseño responsive",
+    "Navegación móvil",
+    "SEO optimizado",
+    "Sistema de notificaciones",
+    "Seguridad mejorada",
+    "Rendimiento optimizado"
+  ],
+  "installation": {
+    "steps": [
+      "Subir archivo ZIP a WordPress",
+      "Activar tema",
+      "Configurar contenido",
+      "Personalizar colores"
+    ],
+    "automatic": true
+  },
+  "support": {
+    "email": "soporte@sueñoandino.com",
+    "documentation": "GUIA-INSTALACION-FINAL.md"
+  }
+}

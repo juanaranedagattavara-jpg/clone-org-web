@@ -1,0 +1,726 @@
+/* Frontend styles for Sueño Andino blocks */
+
+/* Hero Section Block */
+.wp-block-group.hero-section {
+    background: linear-gradient(135deg, var(--sa-cloud) 0%, #ffffff 100%);
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--sa-ink);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--sa-ink);
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+    min-width: 150px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--sa-primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--sa-ink);
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Timeline Block */
+.wp-block-group.timeline-section {
+    background: #f8f6f3;
+    padding: 80px 0;
+    position: relative;
+}
+
+.anne-timeline {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 2rem;
+}
+
+.anne-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d4d4d4;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.anne-timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6rem;
+    position: relative;
+    min-height: 200px;
+}
+
+.anne-timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.anne-timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.anne-timeline-image {
+    flex: 0 0 45%;
+    height: 200px;
+    margin: 0 2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.anne-timeline-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 100%);
+    border-radius: 8px;
+    border: 4px solid #0e5e6f;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anne-timeline-item:nth-child(odd) .anne-timeline-image .image-placeholder {
+    border-color: #0e5e6f;
+}
+
+.anne-timeline-item:nth-child(even) .anne-timeline-image .image-placeholder {
+    border-color: #7fb069;
+}
+
+.anne-timeline-item:nth-child(3n) .anne-timeline-image .image-placeholder {
+    border-color: #d4a574;
+}
+
+.anne-timeline-item:nth-child(4n) .anne-timeline-image .image-placeholder {
+    border-color: #8b5a3c;
+}
+
+.anne-timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #0e5e6f;
+    border: 3px solid #f8f6f3;
+}
+
+.anne-timeline-item:nth-child(even) .anne-timeline-dot {
+    background: #7fb069;
+}
+
+.anne-timeline-item:nth-child(3n) .anne-timeline-dot {
+    background: #d4a574;
+}
+
+.anne-timeline-item:nth-child(4n) .anne-timeline-dot {
+    background: #8b5a3c;
+}
+
+.anne-year {
+    display: inline-block;
+    background: #e8f5e8;
+    color: #2d5a2d;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    border: 1px solid #7fb069;
+    white-space: nowrap;
+}
+
+.anne-timeline-item:nth-child(2) .anne-year {
+    background: #e8f0f2;
+    color: #0e5e6f;
+    border-color: #0e5e6f;
+}
+
+.anne-timeline-item:nth-child(3) .anne-year {
+    background: #f5f0e8;
+    color: #d4a574;
+    border-color: #d4a574;
+}
+
+.anne-timeline-item:nth-child(4) .anne-year {
+    background: #f2e8e0;
+    color: #8b5a3c;
+    border-color: #8b5a3c;
+}
+
+.anne-timeline-content {
+    flex: 0 0 45%;
+    width: 100%;
+    max-width: 400px;
+    min-height: 200px;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin: 0 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.anne-timeline-content h3 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1.3;
+    flex-shrink: 0;
+}
+
+.anne-timeline-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+/* Services Block */
+.wp-block-group.services-section {
+    background: white;
+    padding: 100px 0 150px 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.service-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f0f0f0;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sa-primary), var(--sa-accent));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--sa-primary);
+}
+
+.service-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, rgba(14, 94, 111, 0.1), rgba(127, 176, 105, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: linear-gradient(135deg, var(--sa-primary), var(--sa-accent));
+    transform: scale(1.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    color: white;
+    transform: scale(1.1);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+    color: var(--sa-primary);
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover p {
+    color: #555;
+}
+
+/* Testimonials Block */
+.wp-block-group.testimonials-section {
+    background: white;
+    padding: 100px 0 150px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: var(--sa-primary);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--sa-primary), var(--sa-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.testimonial-info h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.3;
+}
+
+.testimonial-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.testimonial-card blockquote {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+    font-style: normal;
+    position: relative;
+}
+
+.testimonial-card blockquote::before {
+    content: '"';
+    font-size: 2rem;
+    color: var(--sa-primary);
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    font-family: serif;
+    opacity: 0.3;
+}
+
+/* Team Block */
+.wp-block-group.team-section {
+    background: white;
+    padding: 100px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.team-member {
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-image {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 1.5rem;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.team-member:hover .image-placeholder {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.placeholder-content {
+    z-index: 2;
+    position: relative;
+}
+
+.placeholder-icon {
+    font-size: 3rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.team-member:hover .placeholder-icon {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.decorative-dots {
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, var(--sa-primary) 2px, transparent 2px);
+    background-size: 8px 8px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.decorative-shape {
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #7fb069, #a8d8a8);
+    border-radius: 8px;
+    opacity: 0.8;
+    z-index: 1;
+    transform: rotate(15deg);
+}
+
+.team-member h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--sa-ink);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.team-member:hover h4 {
+    color: var(--sa-primary);
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.team-member:hover p {
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .anne-timeline::before {
+        left: 30px;
+        width: 2px;
+        z-index: 0;
+    }
+
+    .anne-timeline-item {
+        flex-direction: column !important;
+        min-height: auto;
+        margin-bottom: 0;
+        padding-left: 60px;
+        position: relative;
+    }
+
+    .anne-timeline-image {
+        flex: none;
+        width: 100%;
+        height: 250px;
+        margin-bottom: 2rem;
+        order: 1;
+        padding: 0;
+    }
+
+    .anne-timeline-dot {
+        position: absolute;
+        left: 0;
+        top: 125px;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: 16px;
+        height: 16px;
+    }
+
+    .anne-timeline-content {
+        flex: none;
+        width: 100%;
+        padding: 2rem;
+        order: 2;
+        margin: 0;
+        transform: translateX(0) !important;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .hero-stats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .stat-item {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .anne-timeline::before {
+        left: 25px;
+        z-index: 0;
+    }
+
+    .anne-timeline-item {
+        padding-left: 50px;
+        margin-bottom: 2rem;
+        min-height: 350px;
+    }
+
+    .anne-timeline-image {
+        height: 200px;
+        margin-bottom: 1.5rem;
+    }
+
+    .anne-timeline-dot {
+        left: 0;
+        width: 14px;
+        height: 14px;
+        top: 100px;
+        z-index: 10;
+    }
+
+    .anne-timeline-content {
+        padding: 1.5rem;
+    }
+}

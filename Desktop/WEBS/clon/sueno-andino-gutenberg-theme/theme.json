@@ -1,0 +1,183 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "title": "Sueño Andino - Gutenberg",
+    "description": "Tema personalizado para Sueño Andino compatible con bloques Gutenberg",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "color": "#0e5e6f",
+                    "name": "Primary",
+                    "slug": "primary"
+                },
+                {
+                    "color": "#7fb069",
+                    "name": "Accent",
+                    "slug": "accent"
+                },
+                {
+                    "color": "#1a1a1a",
+                    "name": "Ink",
+                    "slug": "ink"
+                },
+                {
+                    "color": "#f8f9fa",
+                    "name": "Cloud",
+                    "slug": "cloud"
+                },
+                {
+                    "color": "#ffffff",
+                    "name": "White",
+                    "slug": "white"
+                }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                    "name": "Inter",
+                    "slug": "inter"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "name": "Small",
+                    "size": "0.875rem",
+                    "slug": "small"
+                },
+                {
+                    "name": "Medium",
+                    "size": "1rem",
+                    "slug": "medium"
+                },
+                {
+                    "name": "Large",
+                    "size": "1.25rem",
+                    "slug": "large"
+                },
+                {
+                    "name": "Extra Large",
+                    "size": "1.5rem",
+                    "slug": "x-large"
+                },
+                {
+                    "name": "Huge",
+                    "size": "2rem",
+                    "slug": "huge"
+                }
+            ]
+        },
+        "spacing": {
+            "spacingScale": {
+                "steps": 7,
+                "mediumStep": 1.5,
+                "unit": "rem"
+            },
+            "spacingSizes": [
+                {
+                    "name": "0",
+                    "size": "0",
+                    "slug": "0"
+                },
+                {
+                    "name": "1",
+                    "size": "0.25rem",
+                    "slug": "10"
+                },
+                {
+                    "name": "2",
+                    "size": "0.5rem",
+                    "slug": "20"
+                },
+                {
+                    "name": "3",
+                    "size": "0.75rem",
+                    "slug": "30"
+                },
+                {
+                    "name": "4",
+                    "size": "1rem",
+                    "slug": "40"
+                },
+                {
+                    "name": "5",
+                    "size": "1.25rem",
+                    "slug": "50"
+                },
+                {
+                    "name": "6",
+                    "size": "1.5rem",
+                    "slug": "60"
+                },
+                {
+                    "name": "7",
+                    "size": "2rem",
+                    "slug": "70"
+                }
+            ]
+        },
+        "layout": {
+            "contentSize": "800px",
+            "wideSize": "1200px"
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--wp--preset--color--white)",
+            "text": "var(--wp--preset--color--ink)"
+        },
+        "typography": {
+            "fontFamily": "var(--wp--preset--font-family--inter)",
+            "fontSize": "var(--wp--preset--font-size--medium)",
+            "lineHeight": "1.6"
+        },
+        "spacing": {
+            "blockGap": "var(--wp--preset--spacing--40)"
+        }
+    },
+    "templateParts": [
+        {
+            "name": "header",
+            "title": "Header",
+            "area": "header"
+        },
+        {
+            "name": "footer",
+            "title": "Footer",
+            "area": "footer"
+        }
+    ],
+    "customTemplates": [
+        {
+            "name": "page-home",
+            "title": "Home Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-about",
+            "title": "About Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-services",
+            "title": "Services Page",
+            "postTypes": ["page"]
+        },
+        {
+            "name": "page-contact",
+            "title": "Contact Page",
+            "postTypes": ["page"]
+        }
+    ],
+    "patterns": [
+        {
+            "name": "sueno-andino/hero-pattern",
+            "title": "Hero Section Pattern",
+            "description": "A hero section with title, description, buttons and stats",
+            "categories": ["sueno-andino"],
+            "content": "<!-- wp:group {\"className\":\"hero-section\",\"align\":\"full\"} -->\n<div class=\"wp-block-group hero-section\"><!-- wp:group {\"className\":\"hero-content\"} -->\n<div class=\"wp-block-group hero-content\"><!-- wp:heading {\"level\":1,\"className\":\"hero-title\"} -->\n<h1 class=\"hero-title\">Transformando Comunidades Sostenibles</h1>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"className\":\"hero-description\"} -->\n<p class=\"hero-description\">Desarrollamos soluciones integrales para el crecimiento territorial sostenible, conectando comunidades con oportunidades de desarrollo.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:buttons {\"className\":\"hero-buttons\"} -->\n<div class=\"wp-block-buttons hero-buttons\"><!-- wp:button {\"className\":\"is-style-primary\"} -->\n<div class=\"wp-block-button is-style-primary\"><a class=\"wp-block-button__link\">Conoce Nuestros Servicios</a></div>\n<!-- /wp:button -->\n\n<!-- wp:button {\"className\":\"is-style-secondary\"} -->\n<div class=\"wp-block-button is-style-secondary\"><a class=\"wp-block-button__link\">Descarga Guía Gratuita</a></div>\n<!-- /wp:button --></div>\n<!-- /wp:buttons -->\n\n<!-- wp:group {\"className\":\"hero-stats\"} -->\n<div class=\"wp-block-group hero-stats\"><!-- wp:group {\"className\":\"stat-item\"} -->\n<div class=\"wp-block-group stat-item\"><!-- wp:heading {\"level\":3,\"className\":\"stat-number\"} -->\n<h3 class=\"stat-number\">50+</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"className\":\"stat-label\"} -->\n<p class=\"stat-label\">Proyectos Completados</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"className\":\"stat-item\"} -->\n<div class=\"wp-block-group stat-item\"><!-- wp:heading {\"level\":3,\"className\":\"stat-number\"} -->\n<h3 class=\"stat-number\">15</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"className\":\"stat-label\"} -->\n<p class=\"stat-label\">Años de Experiencia</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group -->\n\n<!-- wp:group {\"className\":\"stat-item\"} -->\n<div class=\"wp-block-group stat-item\"><!-- wp:heading {\"level\":3,\"className\":\"stat-number\"} -->\n<h3 class=\"stat-number\">200+</h3>\n<!-- /wp:heading -->\n\n<!-- wp:paragraph {\"className\":\"stat-label\"} -->\n<p class=\"stat-label\">Comunidades Beneficiadas</p>\n<!-- /wp:paragraph --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group --></div>\n<!-- /wp:group -->"
+        }
+    ]
+}

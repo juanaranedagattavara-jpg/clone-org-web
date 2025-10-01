@@ -1,0 +1,530 @@
+/* ===== EDITOR DE BLOQUES GUTENBERG ===== */
+
+.wp-block-group {
+    margin: 1rem 0;
+}
+
+/* Hero Section Editor */
+.wp-block-group.hero-section {
+    background: linear-gradient(135deg, #f5f6f7 0%, #ffffff 100%);
+    padding: 2rem;
+    border: 2px dashed #0e5e6f;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.hero-content h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #1c1c1e;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-width: 120px;
+}
+
+.stat-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0e5e6f;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Why We Exist Editor */
+.wp-block-group.why-we-exist-section {
+    border: 2px dashed #7fb069;
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+.why-we-exist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.why-item {
+    min-height: 200px;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+}
+
+.why-item.why-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1c1c1e;
+}
+
+.why-item.why-text p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.text-divider {
+    width: 40px;
+    height: 3px;
+    background: #0e5e6f;
+    margin-top: 0.5rem;
+}
+
+.why-item.why-image {
+    background: #f5f6f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-content {
+    text-align: center;
+}
+
+.placeholder-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+.placeholder-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Timeline Editor */
+.wp-block-group.timeline-section {
+    background: #f8f6f3;
+    padding: 2rem;
+    border: 2px dashed #d4a574;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.anne-timeline {
+    position: relative;
+    padding: 0 1rem;
+}
+
+.anne-timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #d4d4d4;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.anne-timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    min-height: 150px;
+}
+
+.anne-timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.anne-timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.anne-timeline-image {
+    flex: 0 0 30%;
+    height: 120px;
+    margin: 0 1rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.anne-timeline-image .image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 100%);
+    border-radius: 8px;
+    border: 2px solid #0e5e6f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.anne-timeline-dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0e5e6f;
+    border: 2px solid #f8f6f3;
+}
+
+.anne-timeline-content {
+    flex: 0 0 60%;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 1rem;
+}
+
+.anne-year {
+    display: inline-block;
+    background: #e8f5e8;
+    color: #2d5a2d;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid #7fb069;
+}
+
+.anne-timeline-content h3 {
+    color: #333;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.anne-timeline-content p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Services Editor */
+.wp-block-group.services-section {
+    background: white;
+    padding: 2rem;
+    border: 2px dashed #0e5e6f;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(135deg, rgba(14, 94, 111, 0.1), rgba(127, 176, 105, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon {
+    font-size: 2rem;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.5;
+    font-size: 0.9rem;
+}
+
+/* Testimonials Editor */
+.wp-block-group.testimonials-section {
+    background: white;
+    padding: 2rem;
+    border: 2px dashed #7fb069;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f0f0f0;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.testimonial-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0e5e6f, #7fb069);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.avatar-placeholder {
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.testimonial-info h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 0.2rem 0;
+}
+
+.testimonial-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+.testimonial-card blockquote {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+    margin: 0;
+    font-style: normal;
+    position: relative;
+}
+
+.testimonial-card blockquote::before {
+    content: '"';
+    font-size: 1.5rem;
+    color: #0e5e6f;
+    position: absolute;
+    top: -0.3rem;
+    left: -0.3rem;
+    font-family: serif;
+    opacity: 0.3;
+}
+
+/* Team Editor */
+.wp-block-group.team-section {
+    background: white;
+    padding: 2rem;
+    border: 2px dashed #d4a574;
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-2px);
+}
+
+.member-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.placeholder-content {
+    z-index: 2;
+    position: relative;
+}
+
+.placeholder-icon {
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+.decorative-dots {
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle, #0e5e6f 1px, transparent 1px);
+    background-size: 4px 4px;
+    opacity: 0.6;
+    z-index: 1;
+}
+
+.decorative-shape {
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(45deg, #7fb069, #a8d8a8);
+    border-radius: 4px;
+    opacity: 0.8;
+    z-index: 1;
+    transform: rotate(15deg);
+}
+
+.team-member h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1c1c1e;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Responsive Editor */
+@media (max-width: 768px) {
+    .why-we-exist-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .anne-timeline::before {
+        left: 20px;
+    }
+    
+    .anne-timeline-item {
+        flex-direction: column !important;
+        padding-left: 40px;
+    }
+    
+    .anne-timeline-image {
+        flex: none;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 1rem;
+        order: 1;
+    }
+    
+    .anne-timeline-dot {
+        left: 0;
+        top: 50px;
+        transform: translateX(-50%);
+    }
+    
+    .anne-timeline-content {
+        flex: none;
+        width: 100%;
+        order: 2;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-stats {
+        flex-direction: column;
+    }
+}

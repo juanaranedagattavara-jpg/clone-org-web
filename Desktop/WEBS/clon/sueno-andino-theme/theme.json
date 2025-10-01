@@ -1,0 +1,174 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "useRootPaddingAwareAlignments": true,
+        "layout": {
+            "contentSize": "1200px",
+            "wideSize": "1400px"
+        },
+        "color": {
+            "palette": [
+                {
+                    "color": "#0e5e6f",
+                    "name": "Primary",
+                    "slug": "primary"
+                },
+                {
+                    "color": "#7fb069",
+                    "name": "Accent",
+                    "slug": "accent"
+                },
+                {
+                    "color": "#d9c8b4",
+                    "name": "Sand",
+                    "slug": "sand"
+                },
+                {
+                    "color": "#1c1c1e",
+                    "name": "Ink",
+                    "slug": "ink"
+                },
+                {
+                    "color": "#f5f6f7",
+                    "name": "Cloud",
+                    "slug": "cloud"
+                },
+                {
+                    "color": "#ffffff",
+                    "name": "White",
+                    "slug": "white"
+                }
+            ]
+        },
+        "typography": {
+            "fontFamilies": [
+                {
+                    "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+                    "name": "Inter",
+                    "slug": "inter"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "name": "Small",
+                    "size": "14px",
+                    "slug": "small"
+                },
+                {
+                    "name": "Medium",
+                    "size": "16px",
+                    "slug": "medium"
+                },
+                {
+                    "name": "Large",
+                    "size": "18px",
+                    "slug": "large"
+                },
+                {
+                    "name": "Extra Large",
+                    "size": "24px",
+                    "slug": "x-large"
+                },
+                {
+                    "name": "Huge",
+                    "size": "32px",
+                    "slug": "huge"
+                }
+            ]
+        },
+        "spacing": {
+            "spacingScale": {
+                "steps": 0
+            },
+            "spacingSizes": [
+                {
+                    "name": "0",
+                    "size": "0px",
+                    "slug": "0"
+                },
+                {
+                    "name": "1",
+                    "size": "0.25rem",
+                    "slug": "1"
+                },
+                {
+                    "name": "2",
+                    "size": "0.5rem",
+                    "slug": "2"
+                },
+                {
+                    "name": "3",
+                    "size": "0.75rem",
+                    "slug": "3"
+                },
+                {
+                    "name": "4",
+                    "size": "1rem",
+                    "slug": "4"
+                },
+                {
+                    "name": "5",
+                    "size": "1.25rem",
+                    "slug": "5"
+                },
+                {
+                    "name": "6",
+                    "size": "1.5rem",
+                    "slug": "6"
+                },
+                {
+                    "name": "7",
+                    "size": "1.75rem",
+                    "slug": "7"
+                },
+                {
+                    "name": "8",
+                    "size": "2rem",
+                    "slug": "8"
+                },
+                {
+                    "name": "9",
+                    "size": "2.25rem",
+                    "slug": "9"
+                },
+                {
+                    "name": "10",
+                    "size": "2.5rem",
+                    "slug": "10"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "#ffffff",
+            "text": "#1c1c1e"
+        },
+        "typography": {
+            "fontFamily": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif",
+            "fontSize": "16px",
+            "lineHeight": "1.6"
+        },
+        "spacing": {
+            "padding": {
+                "top": "0",
+                "right": "0",
+                "bottom": "0",
+                "left": "0"
+            }
+        }
+    },
+    "templateParts": [
+        {
+            "name": "header",
+            "title": "Header",
+            "area": "header"
+        },
+        {
+            "name": "footer",
+            "title": "Footer",
+            "area": "footer"
+        }
+    ]
+}

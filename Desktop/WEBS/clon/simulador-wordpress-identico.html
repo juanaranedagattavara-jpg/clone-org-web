@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueño Andino - Simulador WordPress Idéntico</title>
+    <style>
+        /* Simular estilos de WordPress */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1c1c1e;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .wp-admin-bar {
+            background: #23282d;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+        }
+        
+        .wp-admin-bar a {
+            color: #00a0d2;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .wp-admin-bar a:hover {
+            color: #00b4e6;
+        }
+        
+        .wp-content {
+            margin-top: 40px;
+        }
+        
+        .theme-preview {
+            border: 2px solid #00a0d2;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .theme-info {
+            background: #f1f1f1;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+        
+        .theme-info h2 {
+            margin: 0 0 10px 0;
+            color: #23282d;
+        }
+        
+        .theme-info p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Simular barra de admin de WordPress -->
+    <div class="wp-admin-bar">
+        <strong>WordPress Simulator</strong> | 
+        <a href="#">Dashboard</a> | 
+        <a href="#">Apariencia</a> | 
+        <a href="#">Temas</a> | 
+        <a href="#">Personalizar</a> |
+        <a href="#">Activar Tema</a>
+    </div>
+    
+    <div class="wp-content">
+        <div class="theme-preview">
+            <div class="theme-info">
+                <h2>Sueño Andino - Diseño Idéntico</h2>
+                <p>Tema activo | Versión 1.0.0 | Diseño EXACTAMENTE igual al original con lead magnet y blog incluido</p>
+            </div>
+            
+            <!-- Incluir el contenido del tema idéntico -->
+            <iframe src="sueño-andino-wordpress.html" 
+                    width="100%" 
+                    height="100vh" 
+                    frameborder="0"
+                    style="border: none; margin: 0; padding: 0;">
+            </iframe>
+        </div>
+    </div>
+    
+    <script>
+        // Simular funciones de WordPress
+        console.log('WordPress Simulator cargado');
+        console.log('Tema: Sueño Andino - Diseño Idéntico');
+        console.log('Estado: Activo y funcionando');
+        console.log('Características: Lead magnet, blog, diseño original completo');
+        
+        // Simular funciones del tema
+        window.showGuideModal = function() {
+            alert('¡Guía Gratuita!\n\nMetodologías Regenerativas para Comunidades Andinas\n\n✅ Metodologías paso a paso\n✅ Casos de éxito reales\n✅ Herramientas prácticas\n\n🔒 Privacidad garantizada');
+        };
+        
+        window.closeGuideModal = function() {
+            console.log('Modal cerrado');
+        };
+    </script>
+</body>
+</html>

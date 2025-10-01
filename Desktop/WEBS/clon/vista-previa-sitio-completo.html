@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueño Andino - Sitio Web Completo</title>
+    <style>
+        /* Variables CSS del tema */
+        :root {
+            --sa-primary: #0e5e6f;
+            --sa-accent: #7fb069;
+            --sa-sand: #d9c8b4;
+            --sa-ink: #1c1c1e;
+            --sa-cloud: #f5f6f7;
+            --sa-white: #ffffff;
+        }
+
+        /* Reset y base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--sa-ink);
+            background-color: var(--sa-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .site-header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .site-logo a {
+            text-decoration: none;
+            color: var(--sa-ink);
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-primary);
+        }
+
+        .main-navigation ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .main-navigation a {
+            text-decoration: none;
+            color: var(--sa-ink);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-navigation a:hover {
+            color: var(--sa-primary);
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--sa-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--sa-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--sa-primary);
+            border-color: var(--sa-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sa-primary);
+            color: white;
+        }
+
+        /* Secciones comunes */
+        .hero-section {
+            background: linear-gradient(135deg, var(--sa-cloud) 0%, #ffffff 100%);
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--sa-ink);
+            opacity: 0.8;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sa-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--sa-ink);
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        /* Navegación entre páginas */
+        .page-navigation {
+            background: var(--sa-cloud);
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .page-nav-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .page-nav-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            color: var(--sa-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-nav-btn:hover {
+            background: var(--sa-primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .page-nav-btn.active {
+            background: var(--sa-primary);
+            color: white;
+        }
+
+        /* Contenido de páginas */
+        .page-content {
+            min-height: 60vh;
+            padding: 4rem 0;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--sa-ink);
+        }
+
+        .page-description {
+            font-size: 1.25rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--sa-ink);
+            opacity: 0.8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Grid de contenido */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .content-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .content-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--sa-ink);
+        }
+
+        .content-card p {
+            color: var(--sa-ink);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--sa-ink);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .page-nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Ocultar páginas por defecto */
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-logo">
+                    <a href="#">
+                        <h1 class="site-title">Sueño Andino</h1>
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="#" onclick="showPage('inicio')">Inicio</a></li>
+                        <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+                        <li><a href="#" onclick="showPage('servicios')">Servicios</a></li>
+                        <li><a href="#" onclick="showPage('nosotros')">Nosotros</a></li>
+                        <li><a href="#" onclick="showPage('contacto')">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navegación entre páginas -->
+    <section class="page-navigation">
+        <div class="container">
+            <div class="page-nav-buttons">
+                <a href="#" class="page-nav-btn active" onclick="showPage('inicio')">🏠 Inicio</a>
+                <a href="#" class="page-nav-btn" onclick="showPage('blog')">📝 Blog</a>
+                <a href="#" class="page-nav-btn" onclick="showPage('servicios')">🛠️ Servicios</a>
+                <a href="#" class="page-nav-btn" onclick="showPage('nosotros')">👥 Nosotros</a>
+                <a href="#" class="page-nav-btn" onclick="showPage('contacto')">📞 Contacto</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Página Inicio -->
+    <div id="inicio" class="page active">
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Transformando Comunidades Sostenibles</h1>
+                    <p class="hero-description">Desarrollamos soluciones integrales para el crecimiento territorial sostenible, conectando comunidades con oportunidades de desarrollo.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">Conoce Nuestros Servicios</a>
+                        <a href="#" class="btn btn-secondary">Descarga Guía Gratuita</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3 class="stat-number">50+</h3>
+                            <p class="stat-label">Proyectos Completados</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">15</h3>
+                            <p class="stat-label">Años de Experiencia</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3 class="stat-number">200+</h3>
+                            <p class="stat-label">Comunidades Beneficiadas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-content">
+            <div class="container">
+                <h2 class="page-title">Nuestros Servicios Principales</h2>
+                <p class="page-description">Soluciones integrales para el desarrollo territorial regenerativo</p>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-icon">🎓</div>
+                        <h3>Educación Regenerativa</h3>
+                        <p>Desarrollamos capacidades locales y fortalecemos el tejido social a través de metodologías participativas y regenerativas.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🚀</div>
+                        <h3>Emprendimiento Social</h3>
+                        <p>Impulsamos iniciativas económicas que generan valor social y ambiental, promoviendo la economía circular.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🗺️</div>
+                        <h3>Consultoría Territorial</h3>
+                        <p>Ofrecemos acompañamiento estratégico para diseñar e implementar proyectos de desarrollo territorial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página Blog -->
+    <div id="blog" class="page">
+        <section class="page-content">
+            <div class="container">
+                <h1 class="page-title">Nuestro Blog</h1>
+                <p class="page-description">Explora nuestros artículos, noticias y recursos sobre desarrollo territorial regenerativo</p>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-icon">📝</div>
+                        <h3>Metodologías Regenerativas</h3>
+                        <p>Descubre las últimas técnicas y enfoques para el desarrollo territorial sostenible.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🌱</div>
+                        <h3>Casos de Éxito</h3>
+                        <p>Historias reales de comunidades que han transformado su territorio con nuestro apoyo.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">📊</div>
+                        <h3>Investigación y Datos</h3>
+                        <p>Análisis y estudios sobre el impacto del desarrollo territorial regenerativo.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🎯</div>
+                        <h3>Herramientas Prácticas</h3>
+                        <p>Guías y recursos para implementar proyectos de desarrollo sostenible.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página Servicios -->
+    <div id="servicios" class="page">
+        <section class="page-content">
+            <div class="container">
+                <h1 class="page-title">Nuestros Servicios</h1>
+                <p class="page-description">Ofrecemos soluciones integrales para el desarrollo territorial regenerativo</p>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-icon">🎓</div>
+                        <h3>Educación Regenerativa</h3>
+                        <p>Desarrollamos capacidades locales y fortalecemos el tejido social a través de metodologías participativas y regenerativas. Nuestros programas están diseñados para empoderar a las comunidades.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🚀</div>
+                        <h3>Emprendimiento Social</h3>
+                        <p>Impulsamos iniciativas económicas que generan valor social y ambiental. Apoyamos a emprendedores locales en la creación y escalamiento de negocios con propósito.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🗺️</div>
+                        <h3>Consultoría Territorial</h3>
+                        <p>Ofrecemos acompañamiento estratégico a gobiernos locales, organizaciones y empresas para diseñar e implementar proyectos de desarrollo territorial.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página Nosotros -->
+    <div id="nosotros" class="page">
+        <section class="page-content">
+            <div class="container">
+                <h1 class="page-title">Sobre Nosotros</h1>
+                <p class="page-description">Impulsamos el desarrollo territorial regenerativo desde y hacia Latinoamérica</p>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-icon">🌱</div>
+                        <h3>Nuestra Misión</h3>
+                        <p>Transformar territorios a través de metodologías regenerativas y participación comunitaria activa, creando un futuro más próspero y equitativo.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">👥</div>
+                        <h3>Nuestro Equipo</h3>
+                        <p>Un grupo multidisciplinario de expertos apasionados por el desarrollo regenerativo y comprometidos con las comunidades andinas.</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">📊</div>
+                        <h3>Nuestro Impacto</h3>
+                        <p>Más de 1,500 personas beneficiadas, 30+ comunidades atendidas y 20+ proyectos exitosos con 99% de satisfacción.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Página Contacto -->
+    <div id="contacto" class="page">
+        <section class="page-content">
+            <div class="container">
+                <h1 class="page-title">Contáctanos</h1>
+                <p class="page-description">Estamos aquí para ayudarte a transformar tu territorio. ¡Conversemos sobre tu proyecto!</p>
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="content-icon">📍</div>
+                        <h3>Ubicación</h3>
+                        <p>Lima, Perú<br>Av. Principal 123, Miraflores</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">📞</div>
+                        <h3>Teléfono</h3>
+                        <p>+51-999-888-777<br>+51-1-234-5678</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">✉️</div>
+                        <h3>Email</h3>
+                        <p>hola@sueñoandino.com<br>info@sueñoandino.com</p>
+                    </div>
+                    <div class="content-card">
+                        <div class="content-icon">🕒</div>
+                        <h3>Horarios</h3>
+                        <p>Lunes - Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 14:00</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="mailto:hola@sueñoandino.com" class="btn btn-primary">Contactar Ahora</a>
+                    <a href="#" class="btn btn-secondary">Descargar Guía</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sueño Andino</h3>
+                    <p>Desarrollo territorial regenerativo desde y hacia Latinoamérica.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="#" onclick="showPage('inicio')">Inicio</a></li>
+                        <li><a href="#" onclick="showPage('blog')">Blog</a></li>
+                        <li><a href="#" onclick="showPage('servicios')">Servicios</a></li>
+                        <li><a href="#" onclick="showPage('nosotros')">Nosotros</a></li>
+                        <li><a href="#" onclick="showPage('contacto')">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Lima, Perú</li>
+                        <li>+51-999-888-777</li>
+                        <li>hola@sueñoandino.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sueño Andino. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Ocultar todas las páginas
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Mostrar la página seleccionada
+            document.getElementById(pageId).classList.add('active');
+            
+            // Actualizar navegación
+            document.querySelectorAll('.page-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Scroll al inicio
+            window.scrollTo(0, 0);
+        }
+
+        // Scroll suave para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

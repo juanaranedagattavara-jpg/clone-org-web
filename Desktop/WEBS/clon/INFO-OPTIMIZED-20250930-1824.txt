@@ -1,0 +1,48 @@
+INFORMACION DEL PAQUETE OPTIMIZADO - SUENO ANDINO
+=====================================================
+
+Archivo: sueno-andino-theme-optimized-20250930-1824.zip
+Tamaño: 0.03 MB
+Fecha: 2025-09-30 18:24:00
+Tema: Sueño Andino - Gutenberg Optimizado
+Version: 1.0.0-optimized
+WordPress: 6.0+
+PHP: 7.4+
+
+OPTIMIZACIONES INCLUIDAS:
+- Codigo minificado y optimizado
+- Headers de seguridad configurados
+- Cache y compresion optimizados
+- Base de datos optimizada
+- Script de instalacion automatica
+- Configuracion de rendimiento
+
+CARACTERISTICAS:
+- 9 Bloques Gutenberg personalizados
+- Formularios funcionales con base de datos
+- Diseño 100% responsive
+- Sistema de navegacion movil
+- Optimizacion SEO completa
+- Sistema de notificaciones
+- Seguridad mejorada
+- Rendimiento optimizado
+
+INSTRUCCIONES DE INSTALACION:
+1. Subir sueno-andino-theme-optimized-20250930-1824.zip a WordPress
+2. Activar el tema
+3. El tema se instalara automaticamente
+4. Configurar contenido en el editor
+5. Personalizar colores en Apariencia > Personalizar
+
+ARCHIVOS INCLUIDOS:
+- style.css (estilos principales)
+- functions.php (funciones del tema)
+- page-home.php (pagina de inicio)
+- install-theme.php (instalacion automatica)
+- .htaccess (configuracion Apache)
+- wp-config-optimized.php (configuracion WP)
+- css/ (estilos de bloques)
+- js/ (JavaScript optimizado)
+
+Desarrollado con amor para Sueño Andino
+© 2024 - Todos los derechos reservados

@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sueño Andino - Vista Previa del Tema WordPress</title>
+    <style>
+        /* Variables CSS del tema */
+        :root {
+            --sa-primary: #0e5e6f;
+            --sa-accent: #7fb069;
+            --sa-sand: #d9c8b4;
+            --sa-ink: #1c1c1e;
+            --sa-cloud: #f5f6f7;
+            --sa-white: #ffffff;
+        }
+
+        /* Reset y base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--sa-ink);
+            background-color: var(--sa-white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .site-header {
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0;
+        }
+
+        .site-logo a {
+            text-decoration: none;
+            color: var(--sa-ink);
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-primary);
+        }
+
+        .main-navigation ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .main-navigation a {
+            text-decoration: none;
+            color: var(--sa-ink);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .main-navigation a:hover {
+            color: var(--sa-primary);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--sa-cloud) 0%, #ffffff 100%);
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            color: var(--sa-ink);
+            opacity: 0.8;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--sa-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--sa-accent);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--sa-primary);
+            border-color: var(--sa-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--sa-primary);
+            color: white;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sa-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--sa-ink);
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            background: #f8f6f3;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+            color: var(--sa-ink);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .anne-timeline {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 2rem;
+        }
+
+        .anne-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #d4d4d4;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .anne-timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 6rem;
+            position: relative;
+            min-height: 200px;
+        }
+
+        .anne-timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .anne-timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .anne-timeline-image {
+            flex: 0 0 45%;
+            height: 200px;
+            margin: 0 2rem;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #e8f0f2 0%, #d9c8b4 100%);
+            border-radius: 8px;
+            border: 4px solid #0e5e6f;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .anne-timeline-item:nth-child(even) .image-placeholder {
+            border-color: #7fb069;
+        }
+
+        .anne-timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            background: var(--sa-primary);
+            border-radius: 50%;
+            z-index: 2;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px var(--sa-primary);
+        }
+
+        .anne-timeline-content {
+            flex: 0 0 45%;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .anne-year {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+            background: var(--sa-cloud);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+        }
+
+        .anne-timeline-content h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+        }
+
+        .anne-timeline-content p {
+            color: var(--sa-ink);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        .placeholder-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .placeholder-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            opacity: 0.7;
+        }
+
+        /* Services Section */
+        .services-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon-wrapper {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--sa-primary) 0%, var(--sa-accent) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--sa-ink);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: var(--sa-cloud);
+            padding: 80px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--sa-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .avatar-placeholder {
+            color: white;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: var(--sa-ink);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: var(--sa-ink);
+            opacity: 0.8;
+            line-height: 1.6;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Team Section */
+        .team-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .team-member {
+            text-align: center;
+            position: relative;
+        }
+
+        .member-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .member-image .image-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--sa-cloud) 0%, #e8f0f2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .decorative-dots {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 20px;
+            height: 20px;
+            background: var(--sa-accent);
+            border-radius: 50%;
+        }
+
+        .decorative-shape {
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            width: 30px;
+            height: 30px;
+            background: var(--sa-primary);
+            border-radius: 8px;
+            transform: rotate(45deg);
+        }
+
+        .team-member h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--sa-ink);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: var(--sa-ink);
+            opacity: 0.7;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--sa-primary);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .contact-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-section .btn-primary {
+            background: white;
+            color: var(--sa-primary);
+        }
+
+        .contact-section .btn-primary:hover {
+            background: var(--sa-accent);
+            color: white;
+        }
+
+        .contact-section .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .contact-section .btn-secondary:hover {
+            background: white;
+            color: var(--sa-primary);
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--sa-ink);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .anne-timeline-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
+            
+            .anne-timeline-image {
+                flex: none;
+                width: 100%;
+                margin: 0 0 2rem 0;
+            }
+            
+            .anne-timeline-content {
+                flex: none;
+                width: 100%;
+            }
+            
+            .anne-timeline::before {
+                display: none;
+            }
+            
+            .anne-timeline-dot {
+                display: none;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        /* Modal */
+        .guide-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--sa-ink);
+        }
+
+        .guide-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .guide-form input {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .guide-form button {
+            background: var(--sa-primary);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .guide-form button:hover {
+            background: var(--sa-accent);
+        }
+
+        .privacy-note {
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-logo">
+                    <a href="#">
+                        <h1 class="site-title">Sueño Andino</h1>
+                    </a>
+                </div>
+                <nav class="main-navigation">
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transformando Comunidades Sostenibles</h1>
+                <p class="hero-description">Desarrollamos soluciones integrales para el crecimiento territorial sostenible, conectando comunidades con oportunidades de desarrollo.</p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn btn-primary">Conoce Nuestros Servicios</a>
+                    <a href="#" onclick="showGuideModal(); return false;" class="btn btn-secondary">Descarga Guía Gratuita</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <h3 class="stat-number">50+</h3>
+                        <p class="stat-label">Proyectos Completados</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number">15</h3>
+                        <p class="stat-label">Años de Experiencia</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 class="stat-number">200+</h3>
+                        <p class="stat-label">Comunidades Beneficiadas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nuestra Historia</h2>
+                <p>Descubre los momentos importantes que han marcado nuestro camino de transformación territorial regenerativa</p>
+            </div>
+            <div class="anne-timeline">
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">📅</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-timeline-content">
+                        <p class="anne-year">2010</p>
+                        <h3>Fundación de Sueño Andino</h3>
+                        <p>Iniciamos nuestro compromiso con el desarrollo territorial sostenible en Chile, enfocándonos en comunidades rurales y urbanas marginadas.</p>
+                    </div>
+                </div>
+
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">📅</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-timeline-content">
+                        <p class="anne-year">2015</p>
+                        <h3>Expansión Regional</h3>
+                        <p>Ampliamos nuestros servicios a 5 regiones del país, impactando a más de 50 comunidades con proyectos de desarrollo sostenible.</p>
+                    </div>
+                </div>
+
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">📅</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-timeline-content">
+                        <p class="anne-year">2020</p>
+                        <h3>Innovación Digital</h3>
+                        <p>Implementamos tecnologías digitales para optimizar nuestros procesos de desarrollo territorial y mejorar la participación ciudadana.</p>
+                    </div>
+                </div>
+
+                <div class="anne-timeline-item">
+                    <div class="anne-timeline-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">📅</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="anne-timeline-dot"></div>
+                    <div class="anne-timeline-content">
+                        <p class="anne-year">2024</p>
+                        <h3>Liderazgo Nacional</h3>
+                        <p>Nos consolidamos como referentes en desarrollo territorial sostenible a nivel nacional, con reconocimiento internacional.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="servicios">
+        <div class="container">
+            <div class="section-header">
+                <p style="color: var(--sa-primary); font-weight: 600; margin-bottom: 0.5rem;">Lo que Ofrecemos</p>
+                <h2>Nuestros Servicios</h2>
+                <p>Nuestros servicios están diseñados para generar impacto real en las comunidades, combinando sabiduría ancestral con metodologías modernas.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <p class="service-icon">🏗️</p>
+                    </div>
+                    <h3>Desarrollo Territorial</h3>
+                    <p>Planificación y ejecución de proyectos de desarrollo territorial sostenible que transforman comunidades y generan oportunidades de crecimiento.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <p class="service-icon">🌱</p>
+                    </div>
+                    <h3>Sostenibilidad Ambiental</h3>
+                    <p>Implementación de prácticas ambientales responsables y sostenibles que protegen el medio ambiente mientras impulsan el desarrollo económico.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon-wrapper">
+                        <p class="service-icon">🤝</p>
+                    </div>
+                    <h3>Participación Comunitaria</h3>
+                    <p>Fortalecimiento del tejido social y participación ciudadana activa para construir comunidades más cohesionadas y resilientes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <p style="color: var(--sa-primary); font-weight: 600; margin-bottom: 0.5rem;">Testimonios</p>
+                <h2>Lo que Dicen Nuestras Comunidades</h2>
+                <p>Testimonios reales de comunidades que han transformado su territorio a través de nuestro acompañamiento regenerativo.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <p class="avatar-placeholder">M</p>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>María González</h4>
+                            <p>Alcaldesa de Valparaíso</p>
+                        </div>
+                    </div>
+                    <blockquote>
+                        <p>"Sueño Andino transformó completamente nuestra visión del desarrollo territorial. Su enfoque sostenible y participativo ha sido clave para el crecimiento de nuestra comuna."</p>
+                    </blockquote>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <p class="avatar-placeholder">C</p>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Carlos Mendoza</h4>
+                            <p>Director de Desarrollo Rural</p>
+                        </div>
+                    </div>
+                    <blockquote>
+                        <p>"La metodología de Sueño Andino es innovadora y efectiva. Han logrado resultados excepcionales en comunidades que antes parecían sin esperanza de desarrollo."</p>
+                    </blockquote>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <p class="avatar-placeholder">A</p>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4>Ana Rodríguez</h4>
+                            <p>Líder Comunitaria</p>
+                        </div>
+                    </div>
+                    <blockquote>
+                        <p>"Gracias a Sueño Andino, nuestra comunidad ahora tiene un plan de desarrollo claro y sostenible. Han sido un verdadero socio en nuestro crecimiento."</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="equipo">
+        <div class="container">
+            <div class="section-header">
+                <p style="color: var(--sa-primary); font-weight: 600; margin-bottom: 0.5rem;">Nuestro Equipo</p>
+                <h2>Conoce Nuestro Equipo</h2>
+                <p>Un equipo comprometido con el desarrollo territorial y la transformación de comunidades.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">👤</p>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Juan Pérez</h4>
+                    <p>Director Ejecutivo</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">👤</p>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>María Silva</h4>
+                    <p>Coordinadora de Proyectos</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-image">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <p class="placeholder-icon">👤</p>
+                            </div>
+                        </div>
+                        <div class="decorative-dots"></div>
+                        <div class="decorative-shape"></div>
+                    </div>
+                    <h4>Carlos López</h4>
+                    <p>Especialista en Sostenibilidad</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="contact-content">
+                <h2>¿Listo para Transformar tu Comunidad?</h2>
+                <p>Contáctanos y descubre cómo podemos ayudarte a desarrollar tu territorio de manera sostenible.</p>
+                <div class="contact-buttons">
+                    <a href="mailto:info@sueñoandino.org" class="btn btn-primary">Contactar Ahora</a>
+                    <a href="#" onclick="showGuideModal(); return false;" class="btn btn-secondary">Descargar Guía</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sueño Andino</h3>
+                    <p>Desarrollo territorial regenerativo desde y hacia Latinoamérica.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navegación</h3>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li>Lima, Perú</li>
+                        <li>+51-999-888-777</li>
+                        <li>hola@sueñoandino.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sueño Andino. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Lead Magnet -->
+    <div id="guideModal" class="guide-modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-icon">📚</div>
+                <h3>¡Guía Gratuita!</h3>
+                <p class="modal-subtitle">Metodologías Regenerativas para Comunidades Andinas</p>
+                <button class="modal-close" onclick="closeGuideModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="guide-benefits-compact" style="margin-bottom: 2rem;">
+                    <div style="margin-bottom: 0.5rem;">✅ Metodologías paso a paso</div>
+                    <div style="margin-bottom: 0.5rem;">✅ Casos de éxito reales</div>
+                    <div style="margin-bottom: 0.5rem;">✅ Herramientas prácticas</div>
+                </div>
+                
+                <form class="guide-form">
+                    <input type="text" name="name" placeholder="Tu nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <button type="submit">
+                        📥 Descargar Guía
+                    </button>
+                    <p class="privacy-note">🔒 Privacidad garantizada</p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funciones del modal
+        function showGuideModal() {
+            document.getElementById('guideModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGuideModal() {
+            document.getElementById('guideModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al hacer clic fuera
+        document.getElementById('guideModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeGuideModal();
+            }
+        });
+
+        // Manejar formulario
+        document.querySelector('.guide-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const button = this.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '⏳ Enviando...';
+            button.disabled = true;
+            
+            setTimeout(function() {
+                button.innerHTML = '✅ ¡Enviado!';
+                setTimeout(function() {
+                    closeGuideModal();
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

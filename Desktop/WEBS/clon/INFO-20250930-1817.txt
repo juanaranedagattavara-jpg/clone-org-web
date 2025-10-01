@@ -1,0 +1,24 @@
+INFORMACIÓN DEL PAQUETE SUEÑO ANDINO
+=====================================
+
+Archivo: sueno-andino-theme-20250930-1817.zip
+Tamaño: 0.03 MB
+Fecha: 2025-09-30 18:17:10
+Tema: Sueño Andino - Gutenberg
+Versión: 1.0.0
+WordPress: 6.0+
+
+CARACTERÍSTICAS:
+- 9 Bloques Gutenberg personalizados
+- Formularios funcionales con base de datos
+- Diseño 100% responsive
+- Sistema de navegación móvil
+- Optimización SEO completa
+- Sistema de notificaciones
+
+INSTRUCCIONES:
+1. Subir sueno-andino-theme-20250930-1817.zip a WordPress
+2. Activar el tema
+3. Seguir la guía de instalación
+
+Desarrollado con ❤️ para Sueño Andino
